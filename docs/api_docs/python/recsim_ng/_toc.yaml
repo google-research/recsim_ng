@@ -1,0 +1,387 @@
+# Copyright 2021 The RecSim Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+toc:
+- title: recsim_ng
+  section:
+  - title: Overview
+    path: /recsim_ng/api_docs/python/recsim_ng
+- title: recsim_ng.applications
+  section:
+  - title: Overview
+    path: /recsim_ng/api_docs/python/recsim_ng/applications
+  - title: ecosystem_simulation
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation
+    - title: corpus
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/corpus
+      - title: ViableCorpus
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/corpus/ViableCorpus
+    - title: ecosystem_simulation
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/ecosystem_simulation
+      - title: run_simulation
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/ecosystem_simulation/run_simulation
+    - title: metrics
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/metrics
+      - title: UtilityAsRewardMetrics
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/metrics/UtilityAsRewardMetrics
+    - title: recommender
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/recommender
+      - title: MyopicRecommender
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/recommender/MyopicRecommender
+    - title: simulation_config
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/simulation_config
+      - title: create_viable_provider_simulation_network
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/simulation_config/create_viable_provider_simulation_network
+    - title: user
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/user
+      - title: ClusteredNormalUser
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/user/ClusteredNormalUser
+      - title: ClusteredNormalUserCoreDispersion
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/user/ClusteredNormalUserCoreDispersion
+      - title: init_random_provider_clusters
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/user/init_random_provider_clusters
+  - title: latent_variable_model_learning
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning
+    - title: recommender
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/recommender
+      - title: SimpleNormalRecommender
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/recommender/SimpleNormalRecommender
+    - title: simulation_config
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/simulation_config
+      - title: create_latent_variable_model_network
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/simulation_config/create_latent_variable_model_network
+    - title: user
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/user
+      - title: ModelLearningDemoUser
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/user/ModelLearningDemoUser
+  - title: recsys_partially_observable_rl
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl
+    - title: corpus
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/corpus
+      - title: CorpusWithTopicAndQuality
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/corpus/CorpusWithTopicAndQuality
+      - title: StaticCorpus
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/corpus/StaticCorpus
+    - title: interest_evolution_simulation
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/interest_evolution_simulation
+      - title: distributed_train_step
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/interest_evolution_simulation/distributed_train_step
+      - title: make_runtime
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/interest_evolution_simulation/make_runtime
+      - title: make_train_step
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/interest_evolution_simulation/make_train_step
+      - title: reset_optimizer
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/interest_evolution_simulation/reset_optimizer
+      - title: run_simulation
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/interest_evolution_simulation/run_simulation
+    - title: metrics
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/metrics
+      - title: ConsumedTimeAsRewardMetrics
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/metrics/ConsumedTimeAsRewardMetrics
+    - title: recommender
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/recommender
+      - title: CollabFilteringModel
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/recommender/CollabFilteringModel
+      - title: CollabFilteringRecommender
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/recommender/CollabFilteringRecommender
+    - title: simulation_config
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/simulation_config
+      - title: create_interest_evolution_simulation_network
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/simulation_config/create_interest_evolution_simulation_network
+    - title: user
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/user
+      - title: InterestEvolutionUser
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/user/InterestEvolutionUser
+      - title: tensor_space
+        path: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/user/tensor_space
+- title: recsim_ng.core
+  section:
+  - title: Overview
+    path: /recsim_ng/api_docs/python/recsim_ng/core
+  - title: network
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/core/network
+    - title: Network
+      path: /recsim_ng/api_docs/python/recsim_ng/core/network/Network
+    - title: find_field
+      path: /recsim_ng/api_docs/python/recsim_ng/core/network/find_field
+    - title: find_unique_field
+      path: /recsim_ng/api_docs/python/recsim_ng/core/network/find_unique_field
+  - title: value
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/core/value
+    - title: FieldSpec
+      path: /recsim_ng/api_docs/python/recsim_ng/core/value/FieldSpec
+    - title: Value
+      path: /recsim_ng/api_docs/python/recsim_ng/core/value/Value
+  - title: variable
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/core/variable
+    - title: Dependency
+      path: /recsim_ng/api_docs/python/recsim_ng/core/variable/Dependency
+    - title: ValueDef
+      path: /recsim_ng/api_docs/python/recsim_ng/core/variable/ValueDef
+    - title: Variable
+      path: /recsim_ng/api_docs/python/recsim_ng/core/variable/Variable
+    - title: value
+      path: /recsim_ng/api_docs/python/recsim_ng/core/variable/value
+- title: recsim_ng.entities
+  section:
+  - title: Overview
+    path: /recsim_ng/api_docs/python/recsim_ng/entities
+  - title: choice_models
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models
+    - title: affinities
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/affinities
+      - title: TargetPointSimilarity
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/affinities/TargetPointSimilarity
+    - title: selectors
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors
+      - title: ChoiceModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/ChoiceModel
+      - title: IteratedMultinormialLogitChoiceModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/IteratedMultinormialLogitChoiceModel
+      - title: MultinormialLogitChoiceModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/MultinormialLogitChoiceModel
+      - title: get_chosen
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/get_chosen
+  - title: recommendation
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation
+    - title: corpus
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/corpus
+      - title: Corpus
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/corpus/Corpus
+    - title: metrics
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/metrics
+      - title: RecsMetricsBase
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/metrics/RecsMetricsBase
+    - title: recommender
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/recommender
+      - title: BaseRecommender
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/recommender/BaseRecommender
+    - title: user
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/user
+      - title: User
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/recommendation/user/User
+  - title: state_models
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models
+    - title: dynamic
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic
+      - title: ControlledLinearGaussianStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/ControlledLinearGaussianStateModel
+      - title: ControlledLinearScaledGaussianStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/ControlledLinearScaledGaussianStateModel
+      - title: FiniteStateMarkovModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/FiniteStateMarkovModel
+      - title: LinearGaussianStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/LinearGaussianStateModel
+      - title: NoOPOrContinueStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/NoOPOrContinueStateModel
+      - title: RNNCellStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/RNNCellStateModel
+      - title: ResetOrContinueStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/ResetOrContinueStateModel
+      - title: SwitchingDynamicsStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/SwitchingDynamicsStateModel
+    - title: estimation
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/estimation
+      - title: FiniteHistoryStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/estimation/FiniteHistoryStateModel
+    - title: state
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/state
+      - title: StateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/state/StateModel
+    - title: static
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/static
+      - title: GMMVector
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/static/GMMVector
+      - title: HierarchicalStaticTensor
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/static/HierarchicalStaticTensor
+      - title: StaticMixtureSameFamilyModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/static/StaticMixtureSameFamilyModel
+      - title: StaticStateModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/static/StaticStateModel
+      - title: StaticTensor
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/static/StaticTensor
+- title: recsim_ng.lib
+  section:
+  - title: Overview
+    path: /recsim_ng/api_docs/python/recsim_ng/lib
+  - title: data
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/data
+    - title: DataSequence
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/data/DataSequence
+    - title: SlicedValue
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/data/SlicedValue
+    - title: TimeSteps
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/data/TimeSteps
+    - title: data_variable
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/data/data_variable
+    - title: remove_data_index
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/data/remove_data_index
+  - title: python
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/python
+    - title: runtime
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/python/runtime
+      - title: PythonRuntime
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/python/runtime/PythonRuntime
+  - title: runtime
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/runtime
+    - title: Runtime
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/runtime/Runtime
+  - title: tensorflow
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow
+    - title: data
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/data
+      - title: TFDataset
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/data/TFDataset
+    - title: entity
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/entity
+      - title: Entity
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/entity/Entity
+      - title: story_with_trainable_variables
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/entity/story_with_trainable_variables
+    - title: field_spec
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/field_spec
+      - title: FieldSpec
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/field_spec/FieldSpec
+      - title: Space
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/field_spec/Space
+    - title: log_probability
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability
+      - title: log_prob_accumulator_variable
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/log_prob_accumulator_variable
+      - title: log_prob_accumulator_variables
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/log_prob_accumulator_variables
+      - title: log_prob_variables_from_direct_output
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/log_prob_variables_from_direct_output
+      - title: log_prob_variables_from_observation
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/log_prob_variables_from_observation
+      - title: log_probability
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/log_probability
+      - title: log_probability_from_value_trajectory
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/log_probability_from_value_trajectory
+      - title: replay_variables
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/replay_variables
+      - title: total_log_prob_accumulator_variable
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/total_log_prob_accumulator_variable
+    - title: runtime
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/runtime
+      - title: TFRuntime
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/runtime/TFRuntime
+    - title: util
+      section:
+      - title: Overview
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/util
+      - title: initialize_platform
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/util/initialize_platform
+      - title: pickle_to_network_value_trajectory
+        path: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/util/pickle_to_network_value_trajectory
+- title: recsim_ng.stories
+  section:
+  - title: Overview
+    path: /recsim_ng/api_docs/python/recsim_ng/stories
+  - title: recommendation_simulation
+    section:
+    - title: Overview
+      path: /recsim_ng/api_docs/python/recsim_ng/stories/recommendation_simulation
+    - title: recs_story
+      path: /recsim_ng/api_docs/python/recsim_ng/stories/recommendation_simulation/recs_story
+    - title: simplified_recs_story
+      path: /recsim_ng/api_docs/python/recsim_ng/stories/recommendation_simulation/simplified_recs_story
