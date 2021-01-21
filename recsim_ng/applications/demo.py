@@ -14,13 +14,7 @@
 # limitations under the License.
 
 # Lint as: python3
-"""TODO(mmladenov): Do not submit without one-line documentation for demo.
-
-TODO(mmladenov): Do not submit without a detailed description of demo.
-"""
-
-from __future__ import google_type_annotations
-
+"""A simple demostration of RecSim NG."""
 import time
 
 from absl import app
@@ -80,10 +74,7 @@ def model(population_size):
 
   world_state.initial_value = variable.value(lambda: Value(
       three_headed_monkeys=ed.Normal(
-          loc=[3.14] * pref_dimension,
-          scale=[0.01],
-          sample_shape=(1)  # TODO(ccolby): should this be (1,) ?
-      )))
+          loc=[3.14] * pref_dimension, scale=[0.01], sample_shape=(1,))))
 
   social_network.initial_value = variable.value(lambda: Value(
       n=ed.Bernoulli(
@@ -115,7 +106,7 @@ def main(argv):
   del argv
   running_times = []
   population_sizes = [10, 100, 1000]
-  steps = 10000
+  steps = 10
   for population_size in population_sizes:
     print("building simulation for steps={}, population_size={}".format(
         steps, population_size))

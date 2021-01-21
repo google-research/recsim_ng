@@ -34,6 +34,34 @@ this repository in your work.
 
 This is not an officially supported Google product.
 
+## Installation and Sample Usage
+
+It is recommended to install RecSim NG using
+(https://pypi.org/project/recsim_ng/). We want to install the latest version
+from Edward2's repository:
+
+```shell
+pip install recsim_ng
+pip install -e "git+https://github.com/google/edward2.git#egg=edward2"
+```
+
+Here are some sample commands you could use for testing the installation:
+
+```
+git clone https://github.com/google-research/recsim_ng
+cd recsim_ng/recsim_ng/applications/ecosystem_simulation
+python ecosystem_simulation_demo.py
+```
+
+## Tutorials
+
+To get started, please check out our Colab tutorials. In
+[**RecSim NG: Basics**](recsim_ng/colab/RecSim_NG_Basics.ipynb),
+we introduce the RecSim NG model and corrsponding modeling APIs and runtime
+library. We then demonstrate how we define a simulation using **entities**,
+**behaviors**, and **stories**. Finally, we illustrate differentiable
+simulation including model learning and inferance.
+
 ## Documentation
 
 

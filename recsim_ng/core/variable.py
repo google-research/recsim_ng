@@ -33,8 +33,6 @@ fibonacci.value = value(fib_next, (fibonacci.previous,))
 ```
 """
 
-
-
 from typing import Callable, Sequence, Text, Union
 
 import dataclasses
