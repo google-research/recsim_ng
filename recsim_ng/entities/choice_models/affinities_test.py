@@ -97,6 +97,26 @@ class TargetPointSimilarityTest(tf.test.TestCase):
     self.assertAllClose(
         self.evaluate(expected), self.evaluate(actual.get('affinities')))
 
+  def test_single_peaked(self):
+    similarity_model = affinities.TargetPointSimilarity((4,), 2,
+                                                        'single_peaked')
+    user_interests = ed.Deterministic(
+        loc=np.array([[-4, 3], [-4, -3], [4, 3], [4, -3]], dtype=np.float32))
+    slate_docs = ed.Deterministic(
+        loc=np.array([[[-8, 6], [0, 0]], [[-8, -6], [0, 0]], [[8, 6], [0, 0]],
+                      [[8, -6], [0, 0]]],
+                     dtype=np.float32))
+    expected = ed.Deterministic(
+        loc=np.array([[50, 0.], [14, 0.], [-14, 0.], [-50, 0.]],
+                     dtype=np.float32))
+    actual = similarity_model.affinities(
+        user_interests,
+        slate_docs,
+        affinity_peaks=tf.constant([[32., 32.], [32., 0.], [0., 32.], [0.,
+                                                                       0.]]))
+    self.assertAllClose(
+        self.evaluate(expected), self.evaluate(actual.get('affinities')))
+
   def test_specs(self):
     similarity_model = affinities.TargetPointSimilarity((4,), 2, 'dot')
     specs = similarity_model.specs()

@@ -77,7 +77,7 @@ class ChoiceModel(entity.Entity, metaclass=abc.ABCMeta):
     raise NotImplementedError()
 
 
-class MultinormialLogitChoiceModel(ChoiceModel):
+class MultinomialLogitChoiceModel(ChoiceModel):
   """A multinomial logit choice model.
 
   Samples item x in scores according to
@@ -95,7 +95,7 @@ class MultinormialLogitChoiceModel(ChoiceModel):
                batch_shape,
                nochoice_logits,
                positional_bias = -0.0,
-               name = 'MultinormialLogitChoiceModel'):
+               name = 'MultinomialLogitChoiceModel'):
     super().__init__(batch_shape=batch_shape, name=name)
     self._positional_bias = positional_bias
     self._nochoice_logits = tf.cast(
@@ -127,7 +127,7 @@ class MultinormialLogitChoiceModel(ChoiceModel):
         choice=Space(spaces.Box(-np.Inf, np.Inf, shape=self._batch_shape)))
 
 
-class IteratedMultinormialLogitChoiceModel(ChoiceModel):
+class IteratedMultinomialLogitChoiceModel(ChoiceModel):
   """A multinomial logit choice model for multiple choices from a fixed slate.
 
   Samples k items from a slate of n items by applying the multinomial logit
@@ -152,7 +152,7 @@ class IteratedMultinormialLogitChoiceModel(ChoiceModel):
                batch_shape,
                nochoice_logits,
                positional_bias = -0.0,
-               name = 'IteratedMultinormialLogitChoiceModel'):
+               name = 'IteratedMultinomialLogitChoiceModel'):
     """Constructs an IteratedMultinomialLogitChoiceModel.
 
     Args:

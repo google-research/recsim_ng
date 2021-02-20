@@ -15,8 +15,9 @@
 
 # python3
 """Demostrate how we learn user satisfaction sensitivity parameters."""
-from absl import app
+import time
 
+from absl import app
 from recsim_ng.applications.latent_variable_model_learning import simulation_config
 from recsim_ng.core import network as network_lib
 from recsim_ng.core import value
@@ -49,9 +50,10 @@ def main(argv):
           variables=variables, value_trajectory=traj, num_steps=horizon - 1))
   print('======================================================')
 
-  # Try to recover the sensitivity, starting from 0.1 for all users.
+  t_begin = time.time()
+  # Try to recover the sensitivity.
   sensitivity_var = tf.Variable(
-      [0.1] * num_users,
+      tf.linspace(0., 1., num=num_users),
       dtype=tf.float32,
       constraint=lambda x: tf.clip_by_value(x, 0.0, 1.0))
   story = lambda: simulation_config.create_latent_variable_model_network(  # pylint: disable=g-long-lambda
@@ -73,13 +75,13 @@ def main(argv):
         variables=story(), value_trajectory=traj, num_steps=horizon - 1)
 
   # Initialize the HMC transition kernel.
-  num_results = int(2e3)
+  num_results = int(1e3)
   num_burnin_steps = int(5e2)
   adaptive_hmc = tfp.mcmc.SimpleStepSizeAdaptation(
       tfp.mcmc.HamiltonianMonteCarlo(
           target_log_prob_fn=unnormalized_log_prob_train,
           num_leapfrog_steps=5,
-          step_size=.00008),
+          step_size=1e-4),
       num_adaptation_steps=int(num_burnin_steps * 0.8))
 
   # Run the chain (with burn-in).
@@ -90,7 +92,7 @@ def main(argv):
         num_burnin_steps=num_burnin_steps,
         current_state=tfd.Normal(
             loc=tf.ones((num_users, num_topics)) / num_users,
-            scale=0.5).sample(),
+            scale=1.0).sample(),
         kernel=adaptive_hmc,
         trace_fn=lambda _, pkr: pkr.inner_results.is_accepted)
 
@@ -100,7 +102,7 @@ def main(argv):
     return samples, sample_mean, sample_stddev, is_accepted
 
   optimizer = tf.keras.optimizers.Adam(learning_rate=0.02)
-  for _ in range(num_iters):
+  for i in range(num_iters):
     posterior_samples, sample_mean, sample_stddev, is_accepted = run_chain()
     print('mean:{:.4f}  stddev:{:.4f}  acceptance:{:.4f}'.format(
         sample_mean.numpy(), sample_stddev.numpy(), is_accepted.numpy()))
@@ -111,7 +113,8 @@ def main(argv):
       log_prob = -tf.reduce_mean(log_probs)
     grads = tape.gradient(log_prob, trainable_vars)
     optimizer.apply_gradients(zip(grads, trainable_vars))
-    print(trainable_vars[0].numpy(), tf.reduce_mean(log_probs).numpy())
+    print(i, trainable_vars[0].numpy(), tf.reduce_mean(log_probs).numpy())
+  print('Elapsed time: %.3f seconds' % (time.time() - t_begin))
 
 
 if __name__ == '__main__':

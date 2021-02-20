@@ -68,7 +68,7 @@ class ClusteredNormalUser(user.User):
       user_stddev = 20.5,
       affinity_model_ctor = affinities.TargetPointSimilarity,
       utility_model_ctor = affinities.TargetPointSimilarity,
-      choice_model_ctor = selectors.MultinormialLogitChoiceModel,
+      choice_model_ctor = selectors.MultinomialLogitChoiceModel,
       interest_step_size = 0.,
       utility_stddev = 1.):
     super().__init__(config)
@@ -166,7 +166,7 @@ class ClusteredNormalUserCoreDispersion(ClusteredNormalUser):
       user_stddev = 20.5,
       affinity_model_ctor = affinities.TargetPointSimilarity,
       utility_model_ctor = affinities.TargetPointSimilarity,
-      choice_model_ctor = selectors.MultinormialLogitChoiceModel,
+      choice_model_ctor = selectors.MultinomialLogitChoiceModel,
       interest_step_size = 0.,
       utility_stddev = 1.):
     provider_norm = 1.0 + tf.norm(config['provider_means'], axis=1)

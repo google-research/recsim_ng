@@ -16,7 +16,7 @@
 # Lint as: python3
 """Classes that define a user's affinities over a slate of documents."""
 
-from typing import Sequence, Text
+from typing import Optional, Sequence, Text
 
 from gym import spaces
 import numpy as np
@@ -39,13 +39,23 @@ class TargetPointSimilarity(entity.Entity):
   target item. A list of batch dimensions can be appended to the left for both
   for batched execution.
 
+  We support the following similarity function:
+    inverse_euclidean: 1 / ||u - v|| where u is a target_embedding and v is an
+      item embedding,
+    dot: <u, v> = sum_i u_i v_i,
+    negative_cosine: <u, v> / (||u|| * ||v||),
+    negative_euclidean: -||u - v||,
+    single_peaked: sum_i (p_i - |u_i v_i - p_i|) where p_i is the peak value for
+      u on the i-th feature.
+
   Attributes:
     similarity_type: The similarity type chosen for computing affinities. Must
-      one of 'inverse_euclidean', 'dot', 'negative_cosine', and
-      'negative_euclidean'.
+      one of 'inverse_euclidean', 'dot', 'negative_cosine',
+      'negative_euclidean', and 'single_peaked'.
   """
   _supported_methods = [
-      'inverse_euclidean', 'dot', 'negative_cosine', 'negative_euclidean'
+      'inverse_euclidean', 'dot', 'negative_cosine', 'negative_euclidean',
+      'single_peaked'
   ]
 
   def __init__(self,
@@ -63,7 +73,8 @@ class TargetPointSimilarity(entity.Entity):
   def affinities(self,
                  target_embeddings,
                  slate_item_embeddings,
-                 broadcast = True):
+                 broadcast = True,
+                 affinity_peaks = None):
     """Calculates similarity of a set of item embeddings to a target embedding.
 
     Args:
@@ -76,6 +87,9 @@ class TargetPointSimilarity(entity.Entity):
       broadcast: If True, make target_embedding broadcastable to
         slate_item_embeddings by expanding the next-to-last dimension.
         Otherwise, compute affinities of a single item.
+      affinity_peaks: Only used when similarity_type is 'single_peaked'. A
+        tensor with shape [b1, ..., bk, n_features] representing the peak for
+        each feature.
 
     Returns:
       A Value with shape [b1, ..., bk, slate_size] containing the affinities of
@@ -103,6 +117,11 @@ class TargetPointSimilarity(entity.Entity):
     elif self._similarity_type == 'negative_cosine':
       affinities = -tf.keras.losses.cosine_similarity(target_embeddings,
                                                       slate_item_embeddings)
+    elif self._similarity_type == 'single_peaked':
+      local_affinities = tf.expand_dims(affinity_peaks, -2) - tf.abs(
+          tf.expand_dims(affinity_peaks, -2) -
+          tf.math.multiply(target_embeddings, slate_item_embeddings))
+      affinities = tf.reduce_sum(local_affinities, axis=-1)
     return Value(affinities=affinities)
 
   def specs(self):

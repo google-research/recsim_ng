@@ -51,8 +51,7 @@ class InterestEvolutionUser(user.User):
       self,
       config,
       affinity_model_ctor = affinity_lib.TargetPointSimilarity,
-      choice_model_ctor = selector_lib
-      .MultinormialLogitChoiceModel,
+      choice_model_ctor = selector_lib.MultinomialLogitChoiceModel,
       no_click_mass = 0.,
       # Step size for updating user interests based on consumed documents
       # (small!). We may want to have different values for different interests
@@ -133,14 +132,13 @@ class InterestEvolutionUser(user.User):
     affinities = self._affinity_model.affinities(
         previous_state.get('interest.state'),
         slate_docs.get('doc_features')).get('affinities')
-    # Users may choose only from items for which they have enough time butchet.
-    doc_length = slate_docs.get('doc_length')
     choice = self._choice_model.choice(affinities + 2.0)
     chosen_doc_idx = choice.get('choice')
     # Calculate consumption time. Negative quality documents generate more
     # engagement but ultimately lead to negative interest evolution.
     doc_quality = slate_docs.get('doc_quality')
     consumed_fraction = tf.sigmoid(-doc_quality)
+    doc_length = slate_docs.get('doc_length')
     consumed_time = consumed_fraction * doc_length
     chosen_doc_responses = selector_lib.get_chosen(
         Value(consumed_time=consumed_time), chosen_doc_idx)

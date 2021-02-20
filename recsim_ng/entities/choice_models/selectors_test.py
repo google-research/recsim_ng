@@ -20,11 +20,11 @@ from recsim_ng.entities.choice_models import selectors
 import tensorflow as tf
 
 
-class MultinormialLogitChoiceModelTest(tf.test.TestCase):
+class MultinomialLogitChoiceModelTest(tf.test.TestCase):
 
   def test_choice(self):
-    mnl_model = selectors.MultinormialLogitChoiceModel(
-        (2, 2), -np.Inf * tf.ones((2, 2)))
+    mnl_model = selectors.MultinomialLogitChoiceModel((2, 2), -np.Inf * tf.ones(
+        (2, 2)))
     slate_document_logits = ed.Deterministic(
         loc=np.array([[[10., 0.], [0., 10.]], [[10., 0.], [0., 10.]]],
                      dtype=np.float32))
@@ -34,7 +34,7 @@ class MultinormialLogitChoiceModelTest(tf.test.TestCase):
         self.evaluate(expected), self.evaluate(actual.get('choice')))
 
   def test_no_choice(self):
-    mnl_model = selectors.MultinormialLogitChoiceModel((2,), 10.0 * tf.ones(2))
+    mnl_model = selectors.MultinomialLogitChoiceModel((2,), 10.0 * tf.ones(2))
     slate_document_logits = ed.Deterministic(
         loc=np.array([[0., 0.], [0., 0.]], dtype=np.float32))
     expected = ed.Deterministic(loc=np.array([2, 2], dtype=np.int32))
@@ -43,16 +43,16 @@ class MultinormialLogitChoiceModelTest(tf.test.TestCase):
         self.evaluate(expected), self.evaluate(actual.get('choice')))
 
   def test_specs(self):
-    mnl_model = selectors.MultinormialLogitChoiceModel(
-        (2, 2), -np.Inf * tf.ones((2, 2)))
+    mnl_model = selectors.MultinomialLogitChoiceModel((2, 2), -np.Inf * tf.ones(
+        (2, 2)))
     specs = mnl_model.specs()
     self.assertAllEqual(specs.get('choice').space.shape, (2, 2))
 
 
-class IteratedMultinormialLogitChoiceModelTest(tf.test.TestCase):
+class IteratedMultinomialLogitChoiceModelTest(tf.test.TestCase):
 
   def test_choice(self):
-    imnl_model = selectors.IteratedMultinormialLogitChoiceModel(
+    imnl_model = selectors.IteratedMultinomialLogitChoiceModel(
         2, (2, 2), -np.Inf * tf.ones((2, 2)))
     slate_document_logits = ed.Deterministic(
         loc=np.array([[[10., 0.], [0., 10.]], [[10., 0.], [0., 10.]]],
@@ -65,7 +65,7 @@ class IteratedMultinormialLogitChoiceModelTest(tf.test.TestCase):
         self.evaluate(expected), self.evaluate(actual.get('choice')))
 
   def test_no_choice(self):
-    imnl_model = selectors.IteratedMultinormialLogitChoiceModel(
+    imnl_model = selectors.IteratedMultinomialLogitChoiceModel(
         2, (2,), 100.0 * tf.ones(2))
     slate_document_logits = ed.Deterministic(
         loc=np.array([[0., 10.], [10., 0.]], dtype=np.float32))
@@ -75,7 +75,7 @@ class IteratedMultinormialLogitChoiceModelTest(tf.test.TestCase):
         self.evaluate(expected), self.evaluate(actual.get('choice')))
 
   def test_specs(self):
-    mnl_model = selectors.IteratedMultinormialLogitChoiceModel(
+    mnl_model = selectors.IteratedMultinomialLogitChoiceModel(
         2, (2, 2), -np.Inf * tf.ones((2, 2)))
     specs = mnl_model.specs()
     self.assertAllEqual(specs.get('choice').space.shape, (2, 2, 2))

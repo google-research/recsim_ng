@@ -36,6 +36,7 @@ def create_interest_evolution_simulation_network(
     num_topics = 2,
     num_docs = 100,
     freeze_corpus = True,
+    history_length = 15,
 ):
   """Returns a network for interests evolution simulation."""
   config = {
@@ -47,7 +48,7 @@ def create_interest_evolution_simulation_network(
       'slate_size': 2,
       # History length for user representation in recommender.
       #
-      'history_length': 15
+      'history_length': history_length,
   }
   if freeze_corpus:
     corpus_init = lambda config: corpus.CorpusWithTopicAndQuality(  # pylint: disable=g-long-lambda

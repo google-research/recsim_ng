@@ -56,11 +56,18 @@ python ecosystem_simulation_demo.py
 ## Tutorials
 
 To get started, please check out our Colab tutorials. In
-[**RecSim NG: Basics**](recsim_ng/colab/RecSim_NG_Basics.ipynb),
-we introduce the RecSim NG model and corrsponding modeling APIs and runtime
+[**RecSim NG: Basics**](https://nbviewer.jupyter.org/github/google-research/recsim_ng/blob/master/recsim_ng/colab/RecSim_NG_Basics.ipynb),
+we introduce the RecSim NG model and corresponding modeling APIs and runtime
 library. We then demonstrate how we define a simulation using **entities**,
 **behaviors**, and **stories**. Finally, we illustrate differentiable
-simulation including model learning and inferance.
+simulation including model learning and inference.
+
+In [**RecSim NG: Dealing With Uncertainty**](https://nbviewer.jupyter.org/github/google-research/recsim_ng/blob/master/recsim_ng/colab/RecSim_NG_Dealing_With_Uncertainty.ipynb),
+we explicitly address the stochastics of the Markov process captured by a DBN.
+We demonstrate how to use Edward2 in RecSim NG and show how to use the
+corresponding RecSim NG APIs for inference and learning tasks. Finally, we
+showcase how the uncertainty APIs of RecSim NG can be used within a
+recommender-system model-learning application.
 
 ## Documentation
 

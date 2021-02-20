@@ -111,7 +111,7 @@ class CollabFilteringRecommender(recommender.BaseRecommender):
         dtype=tf.float32)
     self._ctime_history = dynamic.NoOPOrContinueStateModel(
         ctime_history_model, batch_ndims=1)
-    self._document_sampler = selector_lib.IteratedMultinormialLogitChoiceModel(
+    self._document_sampler = selector_lib.IteratedMultinomialLogitChoiceModel(
         self._slate_size, (self._num_users,),
         -np.Inf * tf.ones(self._num_users))
     # Call model to create weights

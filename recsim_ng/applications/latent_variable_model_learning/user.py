@@ -67,7 +67,7 @@ class ModelLearningDemoUser(user.User):
       self,
       config,
       affinity_model_ctor = affinities.TargetPointSimilarity,
-      choice_model_ctor = selectors.MultinormialLogitChoiceModel,
+      choice_model_ctor = selectors.MultinomialLogitChoiceModel,
       user_intent_variance = 0.1,
       satisfaction_sensitivity = None,
       initial_satisfication = 5.0,
