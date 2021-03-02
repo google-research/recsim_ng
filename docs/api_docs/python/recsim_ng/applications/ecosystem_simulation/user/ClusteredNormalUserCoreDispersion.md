@@ -37,7 +37,7 @@ Inherits From:
     user_stddev: float = 20.5,
     affinity_model_ctor: Constructor = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity,
     utility_model_ctor: Constructor = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity,
-    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel,
+    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel,
     interest_step_size: float = 0.0,
     utility_stddev: float = 1.0
 ) -> None

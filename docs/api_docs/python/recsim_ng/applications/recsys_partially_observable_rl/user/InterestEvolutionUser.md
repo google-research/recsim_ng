@@ -33,7 +33,7 @@ Inherits From:
 <code>recsim_ng.applications.recsys_partially_observable_rl.user.InterestEvolutionUser(
     config: Dict[Text, Any],
     affinity_model_ctor: Constructor = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity,
-    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel,
+    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel,
     no_click_mass: float = 0.0,
     interest_step_size: float = 0.1,
     reset_users_if_timed_out: bool = False,
@@ -44,8 +44,8 @@ Inherits From:
 </code></pre>
 
 <!-- Placeholder for "Used in" -->
-<!-- Tabular view -->
 
+<!-- Tabular view -->
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
@@ -61,7 +61,6 @@ a descriptive name identifying the entity.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
@@ -208,7 +207,6 @@ numpy=..., dtype=float32)>
 ```
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -224,7 +222,6 @@ The method to wrap.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>

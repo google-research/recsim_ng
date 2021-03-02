@@ -23,7 +23,8 @@ Returns a network for interests evolution simulation.
     num_users: int = 1000,
     num_topics: int = 2,
     num_docs: int = 100,
-    freeze_corpus: bool = True
+    freeze_corpus: bool = True,
+    history_length: int = 15
 ) -> Collection[<a href="../../../../recsim_ng/core/variable/Variable.md"><code>recsim_ng.core.variable.Variable</code></a>]
 </code></pre>
 

@@ -181,10 +181,10 @@ toc:
         path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors
       - title: ChoiceModel
         path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/ChoiceModel
-      - title: IteratedMultinormialLogitChoiceModel
-        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/IteratedMultinormialLogitChoiceModel
-      - title: MultinormialLogitChoiceModel
-        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/MultinormialLogitChoiceModel
+      - title: IteratedMultinomialLogitChoiceModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/IteratedMultinomialLogitChoiceModel
+      - title: MultinomialLogitChoiceModel
+        path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/MultinomialLogitChoiceModel
       - title: get_chosen
         path: /recsim_ng/api_docs/python/recsim_ng/entities/choice_models/selectors/get_chosen
   - title: recommendation

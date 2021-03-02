@@ -68,8 +68,8 @@ A tf.keras model that returns score for each (user, document) pair.
 </code></pre>
 
 <!-- Placeholder for "Used in" -->
-<!-- Tabular view -->
 
+<!-- Tabular view -->
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
@@ -369,7 +369,6 @@ model.add_loss(lambda: tf.reduce_mean(d.kernel))
 ```
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -445,7 +444,6 @@ model.add_metric(tf.keras.metrics.Mean()(x), name='metric_1')
 ```
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -497,7 +495,6 @@ It will never be called by the framework (and thus it will never throw
 unexpected errors in an unrelated workflow).
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -514,7 +511,6 @@ shapes are tuples, integers, or TensorShapes.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -554,7 +550,6 @@ always use the `__call__` method, i.e. `model(inputs)`, which relies on the
 underlying `call` method.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -586,7 +581,6 @@ either a tensor or None (no mask).
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -727,7 +721,6 @@ Arguments supported for backwards compatibility only.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -754,7 +747,6 @@ In case of invalid arguments for
 Computes an output mask tensor.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -777,7 +769,6 @@ Tensor or list of tensors.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -805,7 +796,6 @@ This assumes that the layer will later be used with inputs that match the input
 shape provided here.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -824,7 +814,6 @@ instead of an integer.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -845,7 +834,6 @@ An input shape tuple.
 Count the total number of scalars composing the weights.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -858,7 +846,6 @@ An integer count.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -889,7 +876,6 @@ Returns the loss value & metrics values for the model in test mode.
 Computation is done in batches (see the `batch_size` arg.)
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -1026,7 +1012,6 @@ See the discussion of `Unpacking behavior for iterator-like inputs` for
 `Model.fit`.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1042,7 +1027,6 @@ the display labels for the scalar outputs.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -1095,7 +1079,6 @@ this endpoint.
 Trains the model for a fixed number of epochs (iterations on a dataset).
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -1226,7 +1209,8 @@ are supported in `x`, eg, dict, generator or `keras.utils.Sequence`.
 <td>
 Boolean (whether to shuffle the training data
 before each epoch) or str (for 'batch'). This argument is ignored
-when `x` is a generator. 'batch' is a special option for dealing
+when `x` is a generator or an object of tf.data.Dataset.
+'batch' is a special option for dealing
 with the limitations of HDF5 data; it shuffles in batch-sized
 chunks. Has no effect when `steps_per_epoch` is not `None`.
 </td>
@@ -1385,7 +1369,6 @@ ValueError if it encounters a namedtuple. (Along with instructions to remedy the
 issue.)
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1401,7 +1384,6 @@ and validation metrics values (if applicable).
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -1459,7 +1441,6 @@ layer from the config dictionary. It does not handle layer connectivity (handled
 by Network), nor weights (handled by `set_weights`).
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -1476,7 +1457,6 @@ output of get_config.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1508,7 +1488,6 @@ time it is called. The callers should make a copy of the returned dict if they
 want to modify it.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1534,7 +1513,6 @@ If `name` and `index` are both provided, `index` will take precedence. Indices
 are based on order of horizontal graph traversal (bottom-up).
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -1557,7 +1535,6 @@ Integer, index of layer.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1570,7 +1547,6 @@ A layer instance.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -1594,7 +1570,6 @@ In case of invalid layer name or index.
 Retrieves the weights of the model.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1634,7 +1609,6 @@ TensorFlow format loads based on the object-local names of attributes to which
 layers are assigned in the `Model`'s constructor.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -1679,7 +1653,6 @@ options for loading weights.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1696,7 +1669,6 @@ When loading weights in HDF5 format, returns `None`. </td> </tr>
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -1740,7 +1712,6 @@ This function is cached the first time `Model.predict` or
 `Model.compile` is called.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1772,7 +1743,6 @@ This function is cached the first time `Model.evaluate` or `Model.test_on_batch`
 is called. The cache is cleared whenever `Model.compile` is called.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1805,7 +1775,6 @@ This function is cached the first time `Model.fit` or `Model.train_on_batch` is
 called. The cache is cleared whenever `Model.compile` is called.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1839,7 +1808,6 @@ that behaves differently during inference. Also, note the fact that test loss is
 not affected by regularization layers like noise and dropout.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -1939,7 +1907,6 @@ See the discussion of `Unpacking behavior for iterator-like inputs` for
 methods.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -1952,7 +1919,6 @@ Numpy array(s) of predictions.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2004,7 +1970,6 @@ this endpoint.
 Returns predictions for a single batch of samples.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2022,7 +1987,6 @@ tensor, or a list of tensors (in case the model has multiple inputs).
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2035,7 +1999,6 @@ Numpy array(s) of predictions.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2079,7 +2042,6 @@ Configuration details for *how* this logic is run (e.g. `tf.function` and
 `Model.make_predict_function`, which can also be overridden.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2095,7 +2057,6 @@ A nested structure of `Tensor`s.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2159,7 +2120,6 @@ Please see `tf.keras.models.save_model` or the
 for details.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2289,7 +2249,6 @@ See the
 details on the TensorFlow format.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2333,7 +2292,6 @@ options for saving weights.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2397,7 +2355,6 @@ the bias value. These can be used to set the weights of another Dense layer:
 ```
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2417,7 +2374,6 @@ output of `get_weights`).
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2444,7 +2400,6 @@ layer's specifications.
 Prints a string summary of the network.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2481,7 +2436,6 @@ in order to capture the string summary.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2507,7 +2461,6 @@ if `summary()` is called before the model is built.
 Test the model on a single batch of samples.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2565,7 +2518,6 @@ returned as a list.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2581,7 +2533,6 @@ the display labels for the scalar outputs.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2624,7 +2575,6 @@ Configuration details for *how* this logic is run (e.g. `tf.function` and
 `Model.make_test_function`, which can also be overridden.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2640,7 +2590,6 @@ A nested structure of `Tensor`s.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2668,7 +2617,6 @@ To load a network from a JSON save file, use
 `keras.models.model_from_json(json_string, custom_objects={})`.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2685,7 +2633,6 @@ to be passed to `json.dumps()`.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2714,7 +2661,6 @@ To load a network from a yaml save file, use
 layers / etc to the corresponding functions / classes.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2731,7 +2677,6 @@ to be passed to `yaml.dump()`.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2744,7 +2689,6 @@ A YAML string.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2771,7 +2715,6 @@ if yaml module is not found.
 Runs a single gradient update on a single batch of data.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2841,7 +2784,6 @@ returned as a list.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2858,7 +2800,6 @@ the display labels for the scalar outputs.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>
@@ -2902,7 +2843,6 @@ Configuration details for *how* this logic is run (e.g. `tf.function` and
 `Model.make_train_function`, which can also be overridden.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2918,7 +2858,6 @@ A nested structure of `Tensor`s.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -2966,7 +2905,6 @@ numpy=..., dtype=float32)>
 ```
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -2982,7 +2920,6 @@ The method to wrap.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -3005,7 +2942,6 @@ The original method wrapped such that it enters the module's name scope.
 Wraps `call`, applying pre- and post-processing steps.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -3028,7 +2964,6 @@ Keyword arguments to be passed to `self.call`.
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -3053,7 +2988,6 @@ Output tensor(s).
 -   If the layer is not built, the method will call `build`.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Raises</th></tr>

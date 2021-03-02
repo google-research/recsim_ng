@@ -68,8 +68,8 @@
 *   <a href="../recsim_ng/entities/choice_models/affinities/TargetPointSimilarity.md"><code>recsim_ng.entities.choice_models.affinities.TargetPointSimilarity</code></a>
 *   <a href="../recsim_ng/entities/choice_models/selectors.md"><code>recsim_ng.entities.choice_models.selectors</code></a>
 *   <a href="../recsim_ng/entities/choice_models/selectors/ChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.ChoiceModel</code></a>
-*   <a href="../recsim_ng/entities/choice_models/selectors/IteratedMultinormialLogitChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.IteratedMultinormialLogitChoiceModel</code></a>
-*   <a href="../recsim_ng/entities/choice_models/selectors/MultinormialLogitChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel</code></a>
+*   <a href="../recsim_ng/entities/choice_models/selectors/IteratedMultinomialLogitChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.IteratedMultinomialLogitChoiceModel</code></a>
+*   <a href="../recsim_ng/entities/choice_models/selectors/MultinomialLogitChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel</code></a>
 *   <a href="../recsim_ng/entities/choice_models/selectors/get_chosen.md"><code>recsim_ng.entities.choice_models.selectors.get_chosen</code></a>
 *   <a href="../recsim_ng/entities/recommendation.md"><code>recsim_ng.entities.recommendation</code></a>
 *   <a href="../recsim_ng/entities/recommendation/corpus.md"><code>recsim_ng.entities.recommendation.corpus</code></a>

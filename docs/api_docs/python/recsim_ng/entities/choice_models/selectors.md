@@ -24,10 +24,10 @@ Classes that define a user's choice behavior over a slate of documents.
 [`class ChoiceModel`](../../../recsim_ng/entities/choice_models/selectors/ChoiceModel.md):
 Meta class for choice models.
 
-[`class IteratedMultinormialLogitChoiceModel`](../../../recsim_ng/entities/choice_models/selectors/IteratedMultinormialLogitChoiceModel.md):
+[`class IteratedMultinomialLogitChoiceModel`](../../../recsim_ng/entities/choice_models/selectors/IteratedMultinomialLogitChoiceModel.md):
 A multinomial logit choice model for multiple choices from a fixed slate.
 
-[`class MultinormialLogitChoiceModel`](../../../recsim_ng/entities/choice_models/selectors/MultinormialLogitChoiceModel.md):
+[`class MultinomialLogitChoiceModel`](../../../recsim_ng/entities/choice_models/selectors/MultinomialLogitChoiceModel.md):
 A multinomial logit choice model.
 
 ## Functions

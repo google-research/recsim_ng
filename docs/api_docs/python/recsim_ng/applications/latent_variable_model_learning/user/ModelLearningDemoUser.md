@@ -33,7 +33,7 @@ Inherits From:
 <code>recsim_ng.applications.latent_variable_model_learning.user.ModelLearningDemoUser(
     config: Mapping[Text, Any],
     affinity_model_ctor: Constructor = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity,
-    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel,
+    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel,
     user_intent_variance: float = 0.1,
     satisfaction_sensitivity: Optional[tf.Tensor] = None,
     initial_satisfication: float = 5.0,

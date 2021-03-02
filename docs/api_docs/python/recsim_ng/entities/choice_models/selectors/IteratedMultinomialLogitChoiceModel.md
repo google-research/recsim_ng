@@ -2,7 +2,7 @@ description: A multinomial logit choice model for multiple choices from a fixed
 slate.
 
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
-<meta itemprop="name" content="recsim_ng.entities.choice_models.selectors.IteratedMultinormialLogitChoiceModel" />
+<meta itemprop="name" content="recsim_ng.entities.choice_models.selectors.IteratedMultinomialLogitChoiceModel" />
 <meta itemprop="path" content="Stable" />
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="choice"/>
@@ -10,7 +10,7 @@ slate.
 <meta itemprop="property" content="with_name_scope"/>
 </div>
 
-# recsim_ng.entities.choice_models.selectors.IteratedMultinormialLogitChoiceModel
+# recsim_ng.entities.choice_models.selectors.IteratedMultinomialLogitChoiceModel
 
 <!-- Insert buttons and diff -->
 
@@ -28,12 +28,12 @@ Inherits From:
 [`Entity`](../../../../recsim_ng/lib/tensorflow/entity/Entity.md)
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
-<code>recsim_ng.entities.choice_models.selectors.IteratedMultinormialLogitChoiceModel(
+<code>recsim_ng.entities.choice_models.selectors.IteratedMultinomialLogitChoiceModel(
     num_choices: int,
     batch_shape: Sequence[int],
     nochoice_logits: tf.Tensor,
     positional_bias: float = -0.0,
-    name: Text = &#x27;IteratedMultinormialLogitChoiceModel&#x27;
+    name: Text = &#x27;IteratedMultinomialLogitChoiceModel&#x27;
 ) -> None
 </code></pre>
 
@@ -52,6 +52,7 @@ purposes as it leads to score function estimators of decreased variance due to
 not having to compute log probabilities for unused random draws.
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Args</h2></th></tr>
@@ -98,6 +99,7 @@ variables extraction.
 </table>
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
@@ -165,6 +167,7 @@ source</a>
 Samples a choice from a set of items.
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -181,6 +184,7 @@ representing the logits of each item in the slate.
 </table>
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -234,6 +238,7 @@ numpy=..., dtype=float32)>
 ```
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -249,6 +254,7 @@ The method to wrap.
 </table>
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>

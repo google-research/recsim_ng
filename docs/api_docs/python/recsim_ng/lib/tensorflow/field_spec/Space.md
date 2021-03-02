@@ -31,8 +31,8 @@ Inherits From:
 </code></pre>
 
 <!-- Placeholder for "Used in" -->
-<!-- Tabular view -->
 
+<!-- Tabular view -->
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
@@ -64,7 +64,6 @@ conditions: * They are all convertible to tensors with compatible
 `TensorShape`s. * None of them are convertible to tensors.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -80,7 +79,6 @@ See <a href="../../../../recsim_ng/core/value/FieldSpec.md"><code>value.FieldSpe
 </table>
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>

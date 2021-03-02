@@ -1,7 +1,7 @@
 description: A multinomial logit choice model.
 
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
-<meta itemprop="name" content="recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel" />
+<meta itemprop="name" content="recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel" />
 <meta itemprop="path" content="Stable" />
 <meta itemprop="property" content="__init__"/>
 <meta itemprop="property" content="choice"/>
@@ -9,7 +9,7 @@ description: A multinomial logit choice model.
 <meta itemprop="property" content="with_name_scope"/>
 </div>
 
-# recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel
+# recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel
 
 <!-- Insert buttons and diff -->
 
@@ -27,11 +27,11 @@ Inherits From:
 [`Entity`](../../../../recsim_ng/lib/tensorflow/entity/Entity.md)
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
-<code>recsim_ng.entities.choice_models.selectors.MultinormialLogitChoiceModel(
+<code>recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel(
     batch_shape: Sequence[int],
     nochoice_logits: tf.Tensor,
     positional_bias: float = -0.0,
-    name: Text = &#x27;MultinormialLogitChoiceModel&#x27;
+    name: Text = &#x27;MultinomialLogitChoiceModel&#x27;
 ) -> None
 </code></pre>
 
@@ -40,6 +40,7 @@ Inherits From:
 Samples item x in scores according to p(x) = exp(x) / Sum_{y in scores} exp(y)
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
@@ -112,6 +113,7 @@ source</a>
 Samples a choice from a set of items.
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -128,6 +130,7 @@ representing the logits of each item in the slate.
 </table>
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>
@@ -181,6 +184,7 @@ numpy=..., dtype=float32)>
 ```
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Args</th></tr>
@@ -196,6 +200,7 @@ The method to wrap.
 </table>
 
 <!-- Tabular view -->
+
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2">Returns</th></tr>

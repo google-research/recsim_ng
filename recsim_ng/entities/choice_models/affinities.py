@@ -42,8 +42,8 @@ class TargetPointSimilarity(entity.Entity):
   We support the following similarity function:
     inverse_euclidean: 1 / ||u - v|| where u is a target_embedding and v is an
       item embedding,
-    dot: <u, v> = sum_i u_i v_i,
-    negative_cosine: <u, v> / (||u|| * ||v||),
+    dot: u ^T v = sum_i u_i v_i,
+    negative_cosine: u ^T v / (||u|| * ||v||),
     negative_euclidean: -||u - v||,
     single_peaked: sum_i (p_i - |u_i v_i - p_i|) where p_i is the peak value for
       u on the i-th feature.

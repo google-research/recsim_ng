@@ -40,15 +40,21 @@ slate item to a specified target item. It consumes a tensor of shape
 target item. A list of batch dimensions can be appended to the left for both for
 batched execution.
 
+We support the following similarity function: inverse_euclidean: 1 / ||u - v||
+where u is a target_embedding and v is an item embedding, dot: u ^T v = sum_i
+u_i v_i, negative_cosine: u ^T v / (||u|| * ||v||), negative_euclidean: -||u -
+v||, single_peaked: sum_i (p_i - |u_i v_i - p_i|) where p_i is the peak value
+for u on the i-th feature.
+
 <!-- Tabular view -->
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
 
 <tr> <td> `similarity_type` </td> <td> The similarity type chosen for computing
-affinities. Must one of 'inverse_euclidean', 'dot', 'negative_cosine', and
-'negative_euclidean'. </td> </tr><tr> <td> `name` </td> <td> Returns the name of
-this module as passed or determined in the ctor.
+affinities. Must one of 'inverse_euclidean', 'dot', 'negative_cosine',
+'negative_euclidean', and 'single_peaked'. </td> </tr><tr> <td> `name` </td>
+<td> Returns the name of this module as passed or determined in the ctor.
 
 NOTE: This is not the same as the `self.name_scope.name` which includes parent
 module names. </td> </tr><tr> <td> `name_scope` </td> <td> Returns a
@@ -105,7 +111,8 @@ source</a>
 <code>affinities(
     target_embeddings: tf.Tensor,
     slate_item_embeddings: tf.Tensor,
-    broadcast: bool = True
+    broadcast: bool = True,
+    affinity_peaks: Optional[tf.Tensor] = None
 ) -> <a href="../../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
 </code></pre>
 
@@ -142,6 +149,15 @@ batch dimension.
 If True, make target_embedding broadcastable to
 slate_item_embeddings by expanding the next-to-last dimension.
 Otherwise, compute affinities of a single item.
+</td>
+</tr><tr>
+<td>
+`affinity_peaks`
+</td>
+<td>
+Only used when similarity_type is 'single_peaked'. A
+tensor with shape [b1, ..., bk, n_features] representing the peak for
+each feature.
 </td>
 </tr>
 </table>

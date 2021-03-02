@@ -41,6 +41,29 @@ Note that if `var` is a `Variable` then `var.previous` is shorthand for
 `Dependency(variable_name=var.name, on_current_value=False)`. Finally, see the
 `value` function for another convenient way to form dependencies.
 
+<!-- Tabular view -->
+
+ <table class="responsive fixed orange">
+<colgroup><col width="214px"><col></colgroup>
+<tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>
+
+<tr>
+<td>
+`variable_name`
+</td>
+<td>
+Dataclass field
+</td>
+</tr><tr>
+<td>
+`on_current_value`
+</td>
+<td>
+Dataclass field
+</td>
+</tr>
+</table>
+
 ## Methods
 
 <h3 id="__eq__"><code>__eq__</code></h3>
