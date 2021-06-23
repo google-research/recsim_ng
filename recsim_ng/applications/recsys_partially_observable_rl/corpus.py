@@ -15,7 +15,6 @@
 
 # Lint as: python3
 """Corpus entity for partially observable RL simulation."""
-from typing import Any, Dict, Text
 import edward2 as ed  # type: ignore
 import gin
 from gym import spaces

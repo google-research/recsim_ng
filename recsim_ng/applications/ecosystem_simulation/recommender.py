@@ -15,7 +15,7 @@
 
 # python3
 """A recommender recommends the closest documents based on some affinity."""
-from typing import Any, Callable, Mapping, Text
+from typing import Callable
 import edward2 as ed  # type: ignore
 import gin
 from gym import spaces

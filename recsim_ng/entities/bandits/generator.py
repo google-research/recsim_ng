@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # python3
-"""Recommender entity for recommendation simulation."""
+"""Generator entity for bandit simulation."""
 import abc
 from typing import Text
 
@@ -25,31 +25,29 @@ Value = value.Value
 ValueSpec = value.ValueSpec
 
 
-class BaseRecommender(entity.Entity, metaclass=abc.ABCMeta):
-  """An abstract recommender entity."""
+class BanditGenerator(entity.Entity, metaclass=abc.ABCMeta):
+  """An abstract generator entity responsible for parameters in the environment.
+
+  In particular, parameters of distributions randomize rewards and contexts.
+  """
 
   def __init__(self,
                config,
-               name = "BaseRecommender"):
-    self._slate_size = config["slate_size"]
-    self._num_users = config["num_users"]
-    self._num_docs = config["num_docs"]
+               name = "BanditGenerator"):
     super().__init__(name=name)
+    self._num_bandits = config["num_bandits"]
+    self._num_arms = config["num_arms"]
+    if self._num_bandits < 1:
+      raise ValueError("num_bandits must be positive.")
+    if self._num_arms < 2:
+      raise ValueError("num_arms must be greater than one.")
 
   @abc.abstractmethod
   def specs(self):
+    """Defines ValueSpec for all parameters."""
     raise NotImplementedError()
 
   @abc.abstractmethod
-  def initial_state(self):
-    raise NotImplementedError()
-
-  @abc.abstractmethod
-  def next_state(self, previous_state, user_response,
-                 slate_docs):
-    raise NotImplementedError()
-
-  @abc.abstractmethod
-  def slate_docs(self, previous_state, user_obs,
-                 available_docs):
+  def parameters(self):
+    """Returns a Value containing all parameters."""
     raise NotImplementedError()

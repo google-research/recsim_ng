@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Module importing stories various simulation."""
-from recsim_ng.stories import bandit_simulation
-from recsim_ng.stories import recommendation_simulation
+"""Module importing entities for bandits."""
+from recsim_ng.entities.bandits import algorithm
+from recsim_ng.entities.bandits import context
+from recsim_ng.entities.bandits import generator
+from recsim_ng.entities.bandits import metrics
+from recsim_ng.entities.bandits import problem

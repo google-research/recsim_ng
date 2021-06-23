@@ -15,7 +15,7 @@
 
 # python3
 """User entity for welfare simulation."""
-from typing import Any, Callable, Mapping, Text
+from typing import Callable
 import edward2 as ed  # type: ignore
 import gin
 from gym import spaces

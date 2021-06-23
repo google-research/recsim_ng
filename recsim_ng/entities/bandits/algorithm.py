@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # python3
-"""Recommender entity for recommendation simulation."""
+"""Algorithm entity for bandit simulation."""
 import abc
 from typing import Text
 
@@ -25,31 +25,40 @@ Value = value.Value
 ValueSpec = value.ValueSpec
 
 
-class BaseRecommender(entity.Entity, metaclass=abc.ABCMeta):
-  """An abstract recommender entity."""
+class BanditAlgorithm(entity.Entity, metaclass=abc.ABCMeta):
+  """An abstract algorithm entity responsible for pulling an arm."""
 
   def __init__(self,
                config,
-               name = "BaseRecommender"):
-    self._slate_size = config["slate_size"]
-    self._num_users = config["num_users"]
-    self._num_docs = config["num_docs"]
+               name = "BanditAlgorithm"):
     super().__init__(name=name)
+    self._num_bandits = config["num_bandits"]
+    self._num_arms = config["num_arms"]
+    self._horizon = config["horizon"]
+    if self._num_bandits < 1:
+      raise ValueError("num_bandits must be positive.")
+    if self._num_arms < 2:
+      raise ValueError("num_arms must be greater than one.")
+    if self._horizon < 1:
+      raise ValueError("horizon must be positive.")
 
   @abc.abstractmethod
   def specs(self):
+    """Returns ValueSpec for both ``choice'' and ``statistics''."""
     raise NotImplementedError()
 
   @abc.abstractmethod
-  def initial_state(self):
+  def initial_statistics(self, context):
+    """Initializes the statistics modeling the rewards."""
     raise NotImplementedError()
 
   @abc.abstractmethod
-  def next_state(self, previous_state, user_response,
-                 slate_docs):
+  def next_statistics(self, previous_statistics, arm,
+                      reward, context):
+    """Updates the statistics based on the pulled arm and reward revealed."""
     raise NotImplementedError()
 
   @abc.abstractmethod
-  def slate_docs(self, previous_state, user_obs,
-                 available_docs):
+  def arm_choice(self, statistics, context):
+    """Pulls an arm based on statistics and contexts."""
     raise NotImplementedError()

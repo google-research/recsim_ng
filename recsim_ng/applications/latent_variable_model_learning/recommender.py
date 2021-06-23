@@ -15,7 +15,7 @@
 
 # python3
 """A recommender recommends normally distributed documents."""
-from typing import Any, Mapping, Optional, Text
+from typing import Optional
 
 import edward2 as ed  # type: ignore
 import gin

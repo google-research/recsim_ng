@@ -46,11 +46,13 @@ class Network(object):
   ```
   """
 
-  def __init__(self, variables):
+  def __init__(self,
+               variables,
+               sanitize = True):
     """Creates a `Network` with the given collection of `Variable`s."""
 
     # Resolve Dependencies.
-
+    self._sanitize = sanitize
     variables_by_name = {}
     all_dependencies = set()
     for var in variables:
@@ -65,8 +67,7 @@ class Network(object):
     for dep in all_dependencies:
       if dep.variable_name not in variables_by_name:
         raise ValueError(
-            'dependency {} refers to Variable not in Network'.format(
-                dep.dependency_str))
+            'dependency {} refers to Variable not in Network'.format(str(dep)))
       self._dependency_to_variable[dep] = variables_by_name[dep.variable_name]
 
     # Pre-processing for the step and multi_step methods.
@@ -111,7 +112,8 @@ class Network(object):
           var.initial_value.fn(*[
               initial_value[self._dependency_to_variable[dep].name]
               for dep in var.initial_value.dependencies
-          ]))
+          ]),
+          sanitize=self._sanitize)
     assert len(initial_value) == len(self._ordered_initial_variables)
     return initial_value
 
@@ -130,9 +132,17 @@ class Network(object):
           args.append(current_value[dependent_var.name])
         else:  # a previous dependency
           args.append(previous_value[dependent_var.name])
-      current_value[var.name] = var.typecheck(var.value.fn(*args))
+      current_value[var.name] = var.typecheck(
+          var.value.fn(*args), sanitize=self._sanitize)
     assert len(current_value) == len(self._ordered_variables)
     return current_value
+
+  def invariants(self):
+    """Returns invariants of variables' `FieldSpecs` as a `NetworkValue`."""
+    invariant_dict = {}
+    for var in self._ordered_initial_variables:
+      invariant_dict[var.name] = var.invariants()
+    return invariant_dict
 
 
 class _DependencyDAG(object):

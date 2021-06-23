@@ -15,7 +15,6 @@
 
 # Lint as: python3
 """Recommendation agents."""
-from typing import Any, Dict, Text
 import gin
 from gym import spaces
 import numpy as np

@@ -15,7 +15,7 @@
 
 # Lint as: python3
 """User entity for long-term interests evolution simulation."""
-from typing import Any, Callable, Dict, Optional, Sequence, Text
+from typing import Callable, Optional, Sequence
 
 import gin
 from gym import spaces

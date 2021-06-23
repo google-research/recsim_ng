@@ -15,7 +15,7 @@
 
 # python3
 """User entity for the simulation of learning latent variable models."""
-from typing import Any, Callable, Mapping, Optional, Text
+from typing import Callable, Optional, Text
 
 import edward2 as ed  # type: ignore
 import gin

@@ -16,7 +16,7 @@
 # python3
 """Configuration parameters for learning latent variable models."""
 import functools
-from typing import Collection
+from typing import Collection, Optional
 
 import gin
 from recsim_ng.applications.latent_variable_model_learning import recommender
@@ -33,7 +33,8 @@ def create_latent_variable_model_network(
     num_users = 2000,
     num_topics = 3,
     slate_size = 4,
-    satisfaction_sensitivity = None):
+    satisfaction_sensitivity = None
+):
   """Returns a network for learning latent variable models."""
   config = {
       # Common parameters

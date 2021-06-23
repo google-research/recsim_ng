@@ -138,7 +138,7 @@ class Variable(object):
   def __str__(self):
     return "Variable[{}]".format(self.name)
 
-  def typecheck(self, val):
+  def typecheck(self, val, sanitize = True):
     """Checks that `value` matches the `spec` and then returns it."""
     if not isinstance(val, Value):
       raise TypeError("{} yielded a {} value instead of a Value object".format(
@@ -146,16 +146,30 @@ class Variable(object):
           type(val).__name__))
     field_names = val.as_dict.keys()
     spec_field_names = self.spec.as_dict.keys()
+    sanitized_val = {}
     if field_names != spec_field_names:
       raise ValueError(
           "{}: Value fields [{}] don't match ValueSpec fields [{}]".format(
               self, ", ".join(field_names), ", ".join(spec_field_names)))
     for field_name in field_names:
-      ok, err_msg = self.spec.get(field_name).check_value(val.get(field_name))
+      field_spec = self.spec.get(field_name)
+      field_value = val.get(field_name)
+      ok, err_msg = field_spec.check_value(field_value)
       if not ok:
         raise ValueError("{}: inconsistent values for field '{}': {}".format(
             self, field_name, err_msg))
-    return val
+      if sanitize:
+        sanitized_field_val = field_spec.sanitize(field_value, field_name)
+        sanitized_val[field_name] = sanitized_field_val
+
+    return val if not sanitize else Value(**sanitized_val)
+
+  def invariants(self):
+    """Gather invariants for the constituent fields."""
+    invariant_dict = {}
+    for spec_field_name, field_spec in self.spec.as_dict.items():
+      invariant_dict[spec_field_name] = field_spec.invariant()
+    return Value(**invariant_dict)
 
   @property
   def name(self):
@@ -229,5 +243,5 @@ class Variable(object):
     for dep in initial_value.dependencies:
       if not dep.on_current_value:
         raise ValueError("{} has non-current initial dependency {}".format(
-            self, dep.dependency_str))
+            self, str(dep)))
     self._checked_for_well_formedness = True

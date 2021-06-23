@@ -71,7 +71,8 @@ class TFRuntime(runtime.Runtime):
           cond=lambda prev: tf.constant(True),
           body=lambda prev: [self._packed_step(prev)],
           loop_vars=[self._pack(starting_value)],
-          maximum_iterations=num_steps)[0]
+          maximum_iterations=num_steps,
+          shape_invariants=[self._pack(self._network.invariants())])[0]
 
     self._execute_fn = tf.function(execute_fn) if graph_compile else execute_fn
 

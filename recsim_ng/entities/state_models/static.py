@@ -449,10 +449,12 @@ class GMMVector(StaticMixtureSameFamilyModel):
                mixture_logits = None,
                component_means = None,
                component_scales = None,
+               # TODO(b/146402007): The disable at the end of the function
+               # signature can be removed once this pytype bug is fixed.
                linear_operator_ctor = tf
                .linalg.LinearOperatorFullMatrix,
                return_component_id = False,
-               name = 'GMMVectorStateModel'):
+               name = 'GMMVectorStateModel'):  # pytype: disable=annotation-type-mismatch
     """Constructs a GMMVector entity.
 
 

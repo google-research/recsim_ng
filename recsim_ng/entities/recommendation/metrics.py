@@ -16,7 +16,7 @@
 # python3
 """Metrics entity for recommendation simulation."""
 import abc
-from typing import Any, Mapping, Text
+from typing import Text
 
 from recsim_ng.core import value
 from recsim_ng.lib.tensorflow import entity

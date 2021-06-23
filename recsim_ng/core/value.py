@@ -32,6 +32,8 @@ FieldValue = Any  # The value of one Value field, often an ed.RandomVariable.
 
 _PREFIX_SEPARATOR = "."
 
+Config = Mapping[Text, Any]
+
 
 class Value(object):
   """A mapping from field name to `FieldValue`.
@@ -226,3 +228,31 @@ class FieldSpec(object):
     """
     del field_value
     return True, ""
+
+  def sanitize(self, field_value, field_name):
+    """Performs optional sanitization operations on a field value.
+
+    This method takes in a `FieldValue` value (assumed to have already been
+    checked by check_value with success) and performs reformatting procedures
+    which should not change the value or interfere with the validity of the
+    `FieldValue`.
+
+    Args:
+      field_value: A valid value for this field.
+      field_name: Name of the field within the ValueSpec.
+
+    Returns:
+       a valid sanitized `FieldValue` with the same value as the input.
+    """
+    del field_name
+    return field_value
+
+  def invariant(self):
+    """Emits a specification of the field in a format readable by the runtime.
+
+    The purpose of this method is to lower information about the field to the
+    runtime level, where it can be used for various execution optimizations.
+    The specifics will depend on the computational framework and runtime
+    modality.
+    """
+    return None

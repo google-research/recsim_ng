@@ -15,7 +15,6 @@
 
 # python3
 """Corpus entity for welfare simulation."""
-from typing import Any, Mapping, Text
 import edward2 as ed  # type: ignore
 import gin
 from gym import spaces
