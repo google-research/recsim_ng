@@ -16,7 +16,7 @@
 # python3
 """Corpus entity for recommendation simulation."""
 import abc
-from typing import Text
+from typing import Callable, Text
 
 from recsim_ng.core import value
 from recsim_ng.lib.tensorflow import entity
@@ -50,3 +50,5 @@ class Corpus(entity.Entity, metaclass=abc.ABCMeta):
   @abc.abstractmethod
   def available_documents(self, corpus_state):
     raise NotImplementedError()
+
+CorpusConstructor = Callable[[value.Config], Corpus]

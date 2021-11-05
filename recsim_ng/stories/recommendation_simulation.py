@@ -15,7 +15,8 @@
 
 # python3
 """Recs simulation story."""
-from typing import Any, Callable, Collection, Mapping, Text, Tuple, Union
+from typing import Collection, Tuple, Union
+from recsim_ng.core import value
 from recsim_ng.core import variable
 from recsim_ng.entities.recommendation import corpus as corpus_lib
 from recsim_ng.entities.recommendation import metrics as metrics_lib
@@ -23,11 +24,8 @@ from recsim_ng.entities.recommendation import recommender as recommender_lib
 from recsim_ng.entities.recommendation import user as user_lib
 
 Variable = variable.Variable
-Config = Mapping[Text, Any]
-Corpus = corpus_lib.Corpus
 Metrics = metrics_lib.RecsMetricsBase
 Recommender = recommender_lib.BaseRecommender
-User = user_lib.User
 
 
 def recs_story(
@@ -127,7 +125,8 @@ def recs_story(
 
 def simplified_recs_story(
     config, user_ctor,
-    recommender_ctor):
+    recommender_ctor
+):
   """A simple recommendation story."""
   # Construct entities.
   user = user_ctor(config)

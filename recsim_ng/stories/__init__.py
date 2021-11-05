@@ -16,3 +16,4 @@
 """Module importing stories various simulation."""
 from recsim_ng.stories import bandit_simulation
 from recsim_ng.stories import recommendation_simulation
+from recsim_ng.stories import static_recs_simulation

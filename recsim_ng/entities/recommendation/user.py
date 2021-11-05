@@ -16,7 +16,7 @@
 # python3
 """User entity for recommendation simulation."""
 import abc
-from typing import Text
+from typing import Callable, Text
 
 from recsim_ng.core import value
 from recsim_ng.lib.tensorflow import entity
@@ -53,3 +53,5 @@ class User(entity.Entity, metaclass=abc.ABCMeta):
   @abc.abstractmethod
   def observation(self, user_state):
     raise NotImplementedError()
+
+UserConstructor = Callable[[value.Config], User]

@@ -16,7 +16,7 @@
 # python3
 """Recommender entity for recommendation simulation."""
 import abc
-from typing import Text
+from typing import Callable, Text
 
 from recsim_ng.core import value
 from recsim_ng.lib.tensorflow import entity
@@ -53,3 +53,5 @@ class BaseRecommender(entity.Entity, metaclass=abc.ABCMeta):
   def slate_docs(self, previous_state, user_obs,
                  available_docs):
     raise NotImplementedError()
+
+RecommenderConstructor = Callable[[value.Config], BaseRecommender]

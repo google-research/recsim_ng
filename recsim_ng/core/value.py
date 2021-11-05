@@ -26,13 +26,13 @@ whose field values are `FieldSpec` objects.
 
 import collections
 
-from typing import Any, Callable, Mapping, Text, Tuple
+from typing import Any, Callable, Mapping, MutableMapping, Text, Tuple
 
 FieldValue = Any  # The value of one Value field, often an ed.RandomVariable.
 
 _PREFIX_SEPARATOR = "."
 
-Config = Mapping[Text, Any]
+Config = MutableMapping[Text, Any]
 
 
 class Value(object):

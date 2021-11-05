@@ -16,7 +16,7 @@
 # python3
 """Metrics entity for recommendation simulation."""
 import abc
-from typing import Text
+from typing import Callable, Text
 
 from recsim_ng.core import value
 from recsim_ng.lib.tensorflow import entity
@@ -47,3 +47,5 @@ class RecsMetricsBase(entity.Entity, metaclass=abc.ABCMeta):
                    user_state, user_response,
                    slate_docs):
     raise NotImplementedError()
+
+MetricsConstructor = Callable[[value.Config], RecsMetricsBase]

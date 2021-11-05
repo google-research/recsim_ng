@@ -89,7 +89,7 @@ class CollabFilteringRecommender(recommender.BaseRecommender):
   def __init__(self,
                config,
                model_ctor = CollabFilteringModel,
-               name="Recommender"):
+               name="Recommender"):  # pytype: disable=annotation-type-mismatch  # typed-keras
     super().__init__(config, name=name)
     self._history_length = config["history_length"]
     self._num_docs = config.get("num_docs")
