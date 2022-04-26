@@ -44,3 +44,9 @@ Trajectory replay variables for log probability computation.
 
 [`total_log_prob_accumulator_variable(...)`](../../../recsim_ng/lib/tensorflow/log_probability/total_log_prob_accumulator_variable.md):
 Accumulated joint log probability variable.
+
+## Type Aliases
+
+[`NetworkValue`](../../../recsim_ng/core/network/NetworkValue.md)
+
+[`NetworkValueTrajectory`](../../../recsim_ng/core/network/NetworkValue.md)

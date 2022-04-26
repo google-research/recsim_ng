@@ -31,9 +31,9 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.latent_variable_model_learning.user.ModelLearningDemoUser(
-    config: Mapping[Text, Any],
-    affinity_model_ctor: Constructor = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity,
-    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel,
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
+    affinity_model_ctor: <a href="../../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md"><code>recsim_ng.applications.cav_synthetic_model.user.Constructor</code></a> = <a href="../../../../recsim_ng/entities/choice_models/affinities/TargetPointSimilarity.md"><code>recsim_ng.entities.choice_models.affinities.TargetPointSimilarity</code></a>,
+    choice_model_ctor: <a href="../../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md"><code>recsim_ng.applications.cav_synthetic_model.user.Constructor</code></a> = <a href="../../../../recsim_ng/entities/choice_models/selectors/MultinomialLogitChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel</code></a>,
     user_intent_variance: float = 0.1,
     satisfaction_sensitivity: Optional[tf.Tensor] = None,
     initial_satisfication: float = 5.0,

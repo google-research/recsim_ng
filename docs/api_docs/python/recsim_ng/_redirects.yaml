@@ -1,3 +1,29 @@
 redirects:
+- from: /recsim_ng/api_docs/python/recsim_ng/applications/ecosystem_simulation/user/Constructor
+  to: /recsim_ng/api_docs/python/recsim_ng/applications/cav_synthetic_model/user/Constructor
+- from: /recsim_ng/api_docs/python/recsim_ng/applications/latent_variable_model_learning/user/Constructor
+  to: /recsim_ng/api_docs/python/recsim_ng/applications/cav_synthetic_model/user/Constructor
+- from: /recsim_ng/api_docs/python/recsim_ng/applications/recsys_partially_observable_rl/user/Constructor
+  to: /recsim_ng/api_docs/python/recsim_ng/applications/cav_synthetic_model/user/Constructor
 - from: /recsim_ng/api_docs/python/recsim_ng/core/value/ValueSpec
   to: /recsim_ng/api_docs/python/recsim_ng/core/value/Value
+- from: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/estimation/LinearOpCtor
+  to: /recsim_ng/api_docs/python/recsim_ng/entities/state_models/dynamic/LinearOpCtor
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/jax/runtime/NetworkValue
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/jax/runtime/NetworkValueTrajectory
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/python/runtime/NetworkValue
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/runtime/NetworkValue
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/NetworkValue
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/log_probability/NetworkValueTrajectory
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/runtime/NetworkValue
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/runtime/NetworkValueTrajectory
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue
+- from: /recsim_ng/api_docs/python/recsim_ng/lib/tensorflow/util/NetworkValueTrajectory
+  to: /recsim_ng/api_docs/python/recsim_ng/core/network/NetworkValue

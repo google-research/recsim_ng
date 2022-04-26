@@ -22,3 +22,7 @@ Metrics entity for recommendation simulation.
 
 [`class RecsMetricsBase`](../../../recsim_ng/entities/recommendation/metrics/RecsMetricsBase.md):
 An abstract recommendation metrics entity.
+
+## Type Aliases
+
+[`MetricsConstructor`](../../../recsim_ng/entities/recommendation/metrics/MetricsConstructor.md)

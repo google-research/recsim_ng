@@ -31,7 +31,7 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.recsys_partially_observable_rl.corpus.StaticCorpus(
-    config: Dict[Text, Any],
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
     static_state: <a href="../../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
 ) -> None
 </code></pre>

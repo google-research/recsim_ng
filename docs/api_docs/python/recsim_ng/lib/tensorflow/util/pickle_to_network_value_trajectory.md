@@ -23,7 +23,7 @@ Returns a NetworkValueTrajectory from a pickle representation of dict.
 <code>recsim_ng.lib.tensorflow.util.pickle_to_network_value_trajectory(
     filepath: Text,
     network: <a href="../../../../recsim_ng/core/network/Network.md"><code>recsim_ng.core.network.Network</code></a>
-) -> <a href="../../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
+) -> <a href="../../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>
 </code></pre>
 
 <!-- Placeholder for "Used in" -->

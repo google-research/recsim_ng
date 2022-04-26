@@ -25,3 +25,7 @@ Initializes tf.distribute.Strategy.
 
 [`pickle_to_network_value_trajectory(...)`](../../../recsim_ng/lib/tensorflow/util/pickle_to_network_value_trajectory.md):
 Returns a NetworkValueTrajectory from a pickle representation of dict.
+
+## Type Aliases
+
+[`NetworkValueTrajectory`](../../../recsim_ng/core/network/NetworkValue.md)

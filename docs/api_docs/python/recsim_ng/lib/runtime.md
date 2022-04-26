@@ -22,3 +22,7 @@ Interface for runtimes.
 
 [`class Runtime`](../../recsim_ng/lib/runtime/Runtime.md): A runtime for a
 `Network` of `Variable`s.
+
+## Type Aliases
+
+[`NetworkValue`](../../recsim_ng/core/network/NetworkValue.md)

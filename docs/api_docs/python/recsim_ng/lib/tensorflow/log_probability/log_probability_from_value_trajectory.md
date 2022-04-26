@@ -21,7 +21,7 @@ Log probability of a trajectory of network outputs.
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.lib.tensorflow.log_probability.log_probability_from_value_trajectory(
     variables: Collection[<a href="../../../../recsim_ng/core/variable/Variable.md"><code>recsim_ng.core.variable.Variable</code></a>],
-    value_trajectory: <a href="../../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>,
+    value_trajectory: <a href="../../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>,
     num_steps: int,
     graph_compile: bool = True
 ) -> tf.Tensor

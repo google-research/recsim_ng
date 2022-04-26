@@ -27,6 +27,9 @@ interface for input data.
 [`class SlicedValue`](../../recsim_ng/lib/data/SlicedValue.md): A `DataSequence`
 that divides a `Value` into a sequence of `Value`s.
 
+[`class StaticSlicedValue`](../../recsim_ng/lib/data/StaticSlicedValue.md):
+Static version of SlicedValue with sequence length being one.
+
 [`class TimeSteps`](../../recsim_ng/lib/data/TimeSteps.md): A `DataSequence`
 that yields the numbers `0, 1, 2, ...`.
 
@@ -37,6 +40,13 @@ whose value maps a function over a sequence of data elements.
 
 [`remove_data_index(...)`](../../recsim_ng/lib/data/remove_data_index.md):
 Removes the bookkeeping information from a `data_variable` value.
+
+[`replace_data_sequence(...)`](../../recsim_ng/lib/data/replace_data_sequence.md):
+A helper function for data_variable() to use a new data_sequence.
+
+## Type Aliases
+
+[`OutputFunction`](../../recsim_ng/lib/data/OutputFunction.md)
 
 <!-- Tabular view -->
  <table class="responsive fixed orange">

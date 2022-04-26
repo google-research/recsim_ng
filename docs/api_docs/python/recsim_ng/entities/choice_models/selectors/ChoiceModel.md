@@ -25,8 +25,7 @@ Inherits From: [`Entity`](../../../../recsim_ng/lib/tensorflow/entity/Entity.md)
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.entities.choice_models.selectors.ChoiceModel(
-    batch_shape: Sequence[int],
-    name: Text = &#x27;ChoiceModel&#x27;
+    batch_shape: Sequence[int], name: Text = &#x27;ChoiceModel&#x27;
 ) -> None
 </code></pre>
 

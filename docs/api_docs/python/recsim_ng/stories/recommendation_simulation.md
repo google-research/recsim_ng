@@ -1,4 +1,4 @@
-description: Recs simulation story.
+description: Recs simulation stories.
 
 <div itemscope itemtype="http://developers.google.com/ReferenceObject">
 <meta itemprop="name" content="recsim_ng.stories.recommendation_simulation" />
@@ -16,12 +16,15 @@ description: Recs simulation story.
 <a target="_blank" href="https://github.com/google-research/recsim_ng/tree/master/recsim_ng/stories/recommendation_simulation.py">View
 source</a>
 
-Recs simulation story.
+Recs simulation stories.
 
 ## Functions
 
 [`recs_story(...)`](../../recsim_ng/stories/recommendation_simulation/recs_story.md):
 Recommendation story.
+
+[`recs_story_using_logged_slate_docs(...)`](../../recsim_ng/stories/recommendation_simulation/recs_story_using_logged_slate_docs.md):
+A recommendation story to replay logged recommendations.
 
 [`simplified_recs_story(...)`](../../recsim_ng/stories/recommendation_simulation/simplified_recs_story.md):
 A simple recommendation story.

@@ -31,9 +31,9 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.recsys_partially_observable_rl.user.InterestEvolutionUser(
-    config: Dict[Text, Any],
-    affinity_model_ctor: Constructor = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity,
-    choice_model_ctor: Constructor = recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel,
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
+    affinity_model_ctor: <a href="../../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md"><code>recsim_ng.applications.cav_synthetic_model.user.Constructor</code></a> = <a href="../../../../recsim_ng/entities/choice_models/affinities/TargetPointSimilarity.md"><code>recsim_ng.entities.choice_models.affinities.TargetPointSimilarity</code></a>,
+    choice_model_ctor: <a href="../../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md"><code>recsim_ng.applications.cav_synthetic_model.user.Constructor</code></a> = <a href="../../../../recsim_ng/entities/choice_models/selectors/MultinomialLogitChoiceModel.md"><code>recsim_ng.entities.choice_models.selectors.MultinomialLogitChoiceModel</code></a>,
     no_click_mass: float = 0.0,
     interest_step_size: float = 0.1,
     reset_users_if_timed_out: bool = False,

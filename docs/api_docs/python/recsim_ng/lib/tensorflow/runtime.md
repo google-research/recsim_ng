@@ -22,3 +22,9 @@ TensorFlow-based runtime.
 
 [`class TFRuntime`](../../../recsim_ng/lib/tensorflow/runtime/TFRuntime.md): A
 Tensorflow-based runtime for a `Network` of `Variable`s.
+
+## Type Aliases
+
+[`NetworkValue`](../../../recsim_ng/core/network/NetworkValue.md)
+
+[`NetworkValueTrajectory`](../../../recsim_ng/core/network/NetworkValue.md)

@@ -24,7 +24,7 @@ A `Variable` whose value maps a function over a sequence of data elements.
     name: Text,
     spec: <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>,
     data_sequence: <a href="../../../recsim_ng/lib/data/DataSequence.md"><code>recsim_ng.lib.data.DataSequence</code></a>,
-    output_fn: <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a> = (lambda value: value),
+    output_fn: <a href="../../../recsim_ng/lib/data/OutputFunction.md"><code>recsim_ng.lib.data.OutputFunction</code></a> = (lambda value: value),
     data_index_field: Text = DEFAULT_DATA_INDEX_FIELD
 ) -> <a href="../../../recsim_ng/core/variable/Variable.md"><code>recsim_ng.core.variable.Variable</code></a>
 </code></pre>

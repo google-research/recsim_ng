@@ -20,7 +20,7 @@ Returns the output of a story and trainable variables used in it.
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.lib.tensorflow.entity.story_with_trainable_variables(
-    story: Story
+    story: <a href="../../../../recsim_ng/lib/tensorflow/entity/Story.md"><code>recsim_ng.lib.tensorflow.entity.Story</code></a>
 ) -> Tuple[Collection[Variable], TrainableVariables]
 </code></pre>
 

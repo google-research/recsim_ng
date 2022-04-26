@@ -22,3 +22,7 @@ Corpus entity for recommendation simulation.
 
 [`class Corpus`](../../../recsim_ng/entities/recommendation/corpus/Corpus.md):
 An abstract corpus entity.
+
+## Type Aliases
+
+[`CorpusConstructor`](../../../recsim_ng/entities/recommendation/corpus/CorpusConstructor.md)

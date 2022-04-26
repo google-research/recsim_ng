@@ -31,9 +31,9 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.entities.state_models.dynamic.LinearGaussianStateModel(
-    transition_op_ctor: LinearOpCtor,
-    initial_dist_scale_ctor: LinearOpCtor,
-    transition_noise_scale_ctor: Optional[LinearOpCtor] = None,
+    transition_op_ctor: <a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>,
+    initial_dist_scale_ctor: <a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>,
+    transition_noise_scale_ctor: Optional[<a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>] = None,
     initial_dist_scale: Optional[tf.Tensor] = None,
     transition_parameters: Optional[tf.Tensor] = None,
     transition_noise_scale: Optional[tf.Tensor] = None,
@@ -133,7 +133,7 @@ batch dimensions [B1, ..., Bk] acting on R^num_dims.
 `transition_noise_scale`
 </td>
 <td>
-a tf.Tensor such that
+ a tf.Tensor such that
 tfd.MultivariateNormalLinearOperator(loc=0,
 scale=transition_noise_ctor(transition_noise_scale)).sample() will yield
 a tensor of shape `[B1, ..., Bk, num_dims]`.

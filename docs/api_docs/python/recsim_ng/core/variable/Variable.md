@@ -4,6 +4,7 @@ description: Variables.
 <meta itemprop="name" content="recsim_ng.core.variable.Variable" />
 <meta itemprop="path" content="Stable" />
 <meta itemprop="property" content="__init__"/>
+<meta itemprop="property" content="invariants"/>
 <meta itemprop="property" content="typecheck"/>
 </div>
 
@@ -86,6 +87,17 @@ explicitly then the `Variable` has a static value defined by
 
 ## Methods
 
+<h3 id="invariants"><code>invariants</code></h3>
+
+<a target="_blank" href="https://github.com/google-research/recsim_ng/tree/master/recsim_ng/core/variable.py">View
+source</a>
+
+<pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
+<code>invariants() -> <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
+</code></pre>
+
+Gather invariants for the constituent fields.
+
 <h3 id="typecheck"><code>typecheck</code></h3>
 
 <a target="_blank" href="https://github.com/google-research/recsim_ng/tree/master/recsim_ng/core/variable.py">View
@@ -93,7 +105,8 @@ source</a>
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>typecheck(
-    val: <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
+    val: <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>,
+    sanitize: bool = True
 ) -> <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
 </code></pre>
 

@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """Compute the joint log-probability of a Network given an observation."""
 
 import functools
@@ -96,13 +95,39 @@ def replay_variables(
     A sequence of `Variable`.
   """
   observations = []
+  latent_vars = []
   for var in variables:
-    obs = data.data_variable(
-        name=var.name + " obs",
-        spec=var.spec,
-        data_sequence=data.SlicedValue(value=value_trajectory[var.name]),
-        data_index_field=_OBSERVATION_INDEX_FIELD)
+    if var.name in value_trajectory:
+      obs = data.data_variable(
+          name=var.name + " obs",
+          spec=var.spec,
+          data_sequence=data.SlicedValue(value=value_trajectory[var.name]),
+          data_index_field=_OBSERVATION_INDEX_FIELD)
+    else:
+      # Assume variables not mentioned in the trajectory are latent.
+      obs = Variable(name=var.name + " obs", spec=var.spec)
+      latent_vars.append((var, obs))
     observations.append(obs)
+
+  observation_name = {
+      var.name: obs.name for var, obs in zip(variables, observations)
+  }
+  def rewire_dependency_to_observation(dep):
+    return Dependency(
+        variable_name=observation_name[dep.variable_name],
+        on_current_value=dep.on_current_value)
+
+  for var, obs in latent_vars:
+    # For each latent variable, rewire its dependency to observations.
+    obs.initial_value = ValueDef(
+        fn=var.initial_value.fn,
+        dependencies=list(
+            map(rewire_dependency_to_observation,
+                var.initial_value.dependencies)))
+    obs.value = ValueDef(
+        fn=var.value.fn,
+        dependencies=list(
+            map(rewire_dependency_to_observation, var.value.dependencies)))
   return observations
 
 
@@ -135,7 +160,7 @@ def log_prob_variables_from_observation(
   """
   if len(variables) != len(observation):
     raise ValueError(
-        "number of observation variabbles ({}) does not match number of"
+        "number of observation variables ({}) does not match number of"
         " variables ({})".format(len(observation), len(variables)))
 
   observation_name = {

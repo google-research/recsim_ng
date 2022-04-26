@@ -30,7 +30,7 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.latent_variable_model_learning.recommender.SimpleNormalRecommender(
-    config: Mapping[Text, Any],
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
     slate_doc_means: Optional[np.ndarray] = None,
     normal_scale: float = 0.5
 ) -> None

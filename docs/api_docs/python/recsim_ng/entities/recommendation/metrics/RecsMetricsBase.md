@@ -27,7 +27,7 @@ Inherits From: [`Entity`](../../../../recsim_ng/lib/tensorflow/entity/Entity.md)
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.entities.recommendation.metrics.RecsMetricsBase(
-    config: Mapping[Text, Any],
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
     name: Text = &#x27;Metrics&#x27;
 ) -> None
 </code></pre>

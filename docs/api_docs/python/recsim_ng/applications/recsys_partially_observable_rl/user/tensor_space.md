@@ -16,9 +16,7 @@ source</a>
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.recsys_partially_observable_rl.user.tensor_space(
-    low: float = (-np.Inf),
-    high: float = np.Inf,
-    shape: Sequence[int] = ()
+    low: float = (-np.Inf), high: float = np.Inf, shape: Sequence[int] = ()
 ) -> <a href="../../../../recsim_ng/lib/tensorflow/field_spec/Space.md"><code>recsim_ng.lib.tensorflow.field_spec.Space</code></a>
 </code></pre>
 

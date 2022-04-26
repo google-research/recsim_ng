@@ -56,7 +56,7 @@ constructing a `ValueDef`.
 UNDEFINED<a id="UNDEFINED"></a>
 </td>
 <td>
-<a href="../../recsim_ng/core/variable/ValueDef.md"><code>recsim_ng.core.variable.ValueDef</code></a>
+Instance of <a href="../../recsim_ng/core/variable/ValueDef.md"><code>recsim_ng.core.variable.ValueDef</code></a>
 </td>
 </tr>
 </table>

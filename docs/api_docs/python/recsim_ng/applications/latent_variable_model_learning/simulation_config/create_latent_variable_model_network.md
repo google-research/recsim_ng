@@ -23,7 +23,7 @@ Returns a network for learning latent variable models.
     num_users: int = 2000,
     num_topics: int = 3,
     slate_size: int = 4,
-    satisfaction_sensitivity: tf.Tensor = None
+    satisfaction_sensitivity: Optional[tf.Tensor] = None
 ) -> Collection[<a href="../../../../recsim_ng/core/variable/Variable.md"><code>recsim_ng.core.variable.Variable</code></a>]
 </code></pre>
 

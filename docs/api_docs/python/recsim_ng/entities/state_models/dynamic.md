@@ -44,3 +44,7 @@ A meta model that either evolves or resets the state of a base state model.
 
 [`class SwitchingDynamicsStateModel`](../../../recsim_ng/entities/state_models/dynamic/SwitchingDynamicsStateModel.md):
 A meta model that alternates between two state models of the same family.
+
+## Type Aliases
+
+[`LinearOpCtor`](../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md)

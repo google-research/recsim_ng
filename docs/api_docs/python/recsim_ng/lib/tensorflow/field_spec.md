@@ -20,8 +20,15 @@ Tensorflow-specific implementations of value.FieldSpec.
 
 ## Classes
 
+[`class DynamicFieldSpec`](../../../recsim_ng/lib/tensorflow/field_spec/DynamicFieldSpec.md):
+Field spec for tensors which may change shape across iterations.
+
 [`class FieldSpec`](../../../recsim_ng/lib/tensorflow/field_spec/FieldSpec.md):
 Base Tensorflow field spec; checks shape consistency.
 
 [`class Space`](../../../recsim_ng/lib/tensorflow/field_spec/Space.md):
 Tensorflow field spec with a Gym space.
+
+## Type Aliases
+
+[`TFInvariant`](../../../recsim_ng/lib/tensorflow/field_spec/TFInvariant.md)

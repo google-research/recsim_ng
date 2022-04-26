@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Lint as: python3
 """User entity for long-term interests evolution simulation."""
 from typing import Callable, Optional, Sequence
 
@@ -129,10 +128,10 @@ class InterestEvolutionUser(user.User):
 
   def next_response(self, previous_state, slate_docs):
     """The response value after the initial value."""
-    affinities = self._affinity_model.affinities(
+    affinities = self._affinity_model.affinities(  # pytype: disable=attribute-error  # trace-all-classes
         previous_state.get('interest.state'),
         slate_docs.get('doc_features')).get('affinities')
-    choice = self._choice_model.choice(affinities + 2.0)
+    choice = self._choice_model.choice(affinities + 2.0)  # pytype: disable=attribute-error  # trace-all-classes
     chosen_doc_idx = choice.get('choice')
     # Calculate consumption time. Negative quality documents generate more
     # engagement but ultimately lead to negative interest evolution.
@@ -154,7 +153,7 @@ class InterestEvolutionUser(user.User):
     response_spec = ValueSpec(
         consumed_time=tensor_space(
             low=0.0, high=np.Inf, shape=(self._num_users,))).union(
-                self._choice_model.specs())
+                self._choice_model.specs())  # pytype: disable=attribute-error  # trace-all-classes
     observation_spec = ValueSpec()
     return state_spec.prefixed_with('state').union(
         observation_spec.prefixed_with('observation')).union(

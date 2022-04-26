@@ -22,8 +22,7 @@ Represents a Dependency of one `Variable` on another (or itself).
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.core.variable.Dependency(
-    variable_name: Text,
-    on_current_value: bool
+    variable_name: Text, on_current_value: bool
 )
 </code></pre>
 
@@ -42,7 +41,6 @@ Note that if `var` is a `Variable` then `var.previous` is shorthand for
 `value` function for another convenient way to form dependencies.
 
 <!-- Tabular view -->
-
  <table class="responsive fixed orange">
 <colgroup><col width="214px"><col></colgroup>
 <tr><th colspan="2"><h2 class="add-link">Attributes</h2></th></tr>

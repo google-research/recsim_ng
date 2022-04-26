@@ -30,3 +30,7 @@ A model where interest variance decreases with distance from origin.
 
 [`init_random_provider_clusters(...)`](../../../recsim_ng/applications/ecosystem_simulation/user/init_random_provider_clusters.md):
 Initializes a set of providers over different topics for mixtures.
+
+## Type Aliases
+
+[`Constructor`](../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md)

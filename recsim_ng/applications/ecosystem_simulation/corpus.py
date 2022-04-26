@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """Corpus entity for welfare simulation."""
 import edward2 as ed  # type: ignore
 import gin
@@ -90,7 +89,7 @@ class ViableCorpus(corpus.Corpus):
             axis=0), [self._num_docs, self._num_providers])
     batch_provider_means = tf.broadcast_to(
         tf.expand_dims(self._provider_means, axis=0),
-        [self._num_docs] + list(self._provider_means.shape))
+        [self._num_docs] + list(self._provider_means.shape))  # pytype: disable=attribute-error  # trace-all-classes
     parameters = Value(
         mixture_logits=provider_mixture_logits,
         component_means=batch_provider_means,

@@ -29,10 +29,10 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.entities.state_models.dynamic.ControlledLinearGaussianStateModel(
-    transition_op_ctor: LinearOpCtor,
-    control_op_ctor: LinearOpCtor,
-    transition_noise_scale_ctor: Optional[LinearOpCtor] = None,
-    initial_dist_scale_ctor: Optional[LinearOpCtor] = None,
+    transition_op_ctor: <a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>,
+    control_op_ctor: <a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>,
+    transition_noise_scale_ctor: Optional[<a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>] = None,
+    initial_dist_scale_ctor: Optional[<a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a>] = None,
     initial_dist_scale: Optional[tf.Tensor] = None,
     transition_parameters: Optional[tf.Tensor] = None,
     transition_noise_scale: Optional[tf.Tensor] = None,

@@ -22,3 +22,7 @@ Recommender entity for recommendation simulation.
 
 [`class BaseRecommender`](../../../recsim_ng/entities/recommendation/recommender/BaseRecommender.md):
 An abstract recommender entity.
+
+## Type Aliases
+
+[`RecommenderConstructor`](../../../recsim_ng/entities/recommendation/recommender/RecommenderConstructor.md)

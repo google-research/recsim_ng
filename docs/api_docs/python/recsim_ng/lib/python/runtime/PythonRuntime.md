@@ -40,8 +40,8 @@ source</a>
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>execute(
     num_steps: int,
-    starting_value: Optional[NetworkValue] = None
-) -> <a href="../../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
+    starting_value: Optional[<a href="../../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>] = None
+) -> <a href="../../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>
 </code></pre>
 
 Implements `Runtime`.

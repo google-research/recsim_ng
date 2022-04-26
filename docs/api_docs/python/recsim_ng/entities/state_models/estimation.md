@@ -23,3 +23,7 @@ State models computing sufficient statistics for unobserved quantities.
 
 [`class FiniteHistoryStateModel`](../../../recsim_ng/entities/state_models/estimation/FiniteHistoryStateModel.md):
 State model containing an obervation history as sufficient statistics.
+
+## Type Aliases
+
+[`LinearOpCtor`](../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md)

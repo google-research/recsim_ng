@@ -20,11 +20,11 @@ Recommendation story.
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.stories.recommendation_simulation.recs_story(
-    config: Config,
-    user_ctor: Callable[[Config], User],
-    corpus_ctor: Callable[[Config], Corpus],
-    recommender_ctor: Callable[[Config], Recommender],
-    metrics_ctor: Callable[[Config], Metrics]
+    config: <a href="../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
+    user_ctor: <a href="../../../recsim_ng/entities/recommendation/user/UserConstructor.md"><code>recsim_ng.entities.recommendation.user.UserConstructor</code></a>,
+    corpus_ctor: <a href="../../../recsim_ng/entities/recommendation/corpus/CorpusConstructor.md"><code>recsim_ng.entities.recommendation.corpus.CorpusConstructor</code></a>,
+    recommender_ctor: <a href="../../../recsim_ng/entities/recommendation/recommender/RecommenderConstructor.md"><code>recsim_ng.entities.recommendation.recommender.RecommenderConstructor</code></a>,
+    metrics_ctor: <a href="../../../recsim_ng/entities/recommendation/metrics/MetricsConstructor.md"><code>recsim_ng.entities.recommendation.metrics.MetricsConstructor</code></a>
 ) -> Union[Tuple[Collection[Variable], Recommender], Collection[Variable]]
 </code></pre>
 

@@ -20,8 +20,7 @@ Initializes tf.distribute.Strategy.
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.lib.tensorflow.util.initialize_platform(
-    platform: Text = &#x27;CPU&#x27;,
-    tpu_address: Text = &#x27;local&#x27;
+    platform: Text = &#x27;CPU&#x27;, tpu_address: Text = &#x27;local&#x27;
 ) -> Tuple[tf.distribute.Strategy, int]
 </code></pre>
 

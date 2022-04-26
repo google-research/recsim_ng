@@ -30,7 +30,7 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.recsys_partially_observable_rl.corpus.CorpusWithTopicAndQuality(
-    config: Dict[Text, Any],
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
     topic_min_utility: float = -1.0,
     topic_max_utility: float = 1.0,
     video_length: float = 2.0

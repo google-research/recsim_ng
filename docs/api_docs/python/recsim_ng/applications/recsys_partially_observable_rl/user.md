@@ -26,3 +26,7 @@ Dynamics of a user whose interests evolve over time.
 ## Functions
 
 [`tensor_space(...)`](../../../recsim_ng/applications/recsys_partially_observable_rl/user/tensor_space.md)
+
+## Type Aliases
+
+[`Constructor`](../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md)

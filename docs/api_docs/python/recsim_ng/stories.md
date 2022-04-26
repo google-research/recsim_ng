@@ -20,5 +20,11 @@ Module importing stories various simulation.
 
 ## Modules
 
+[`bandit_simulation`](../recsim_ng/stories/bandit_simulation.md) module: Bandit
+simulation story.
+
 [`recommendation_simulation`](../recsim_ng/stories/recommendation_simulation.md)
-module: Recs simulation story.
+module: Recs simulation stories.
+
+[`static_recs_simulation`](../recsim_ng/stories/static_recs_simulation.md)
+module: A story for one-shot recommendation.

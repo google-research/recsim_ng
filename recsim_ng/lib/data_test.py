@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """Tests for the data module."""
 
 from absl.testing import absltest
@@ -30,6 +29,7 @@ PythonRuntime = runtime.PythonRuntime
 
 TimeSteps = data.TimeSteps
 SlicedValue = data.SlicedValue
+StaticSlicedValue = data.StaticSlicedValue
 
 
 class DataTest(absltest.TestCase):
@@ -62,6 +62,22 @@ class DataTest(absltest.TestCase):
     self.assertEqual(v2.get("a"), 3)
     self.assertEqual(v2.get("b"), 6)
 
+    # Test data_sequence with a batch dimension.
+    data.replace_data_sequence(
+        x,
+        data_sequence=SlicedValue(
+            value=Value(a=[[1, 1], [2, 0], [3, 0]], b=[[4, 0], [5, 0], [6, 6]
+                                                      ])))
+    v0 = r.execute(num_steps=0)["x"]
+    v1 = r.execute(num_steps=1)["x"]
+    v2 = r.execute(num_steps=2)["x"]
+    self.assertEqual(v0.get("a"), [1, 1])
+    self.assertEqual(v0.get("b"), [4, 0])
+    self.assertEqual(v1.get("a"), [2, 0])
+    self.assertEqual(v1.get("b"), [5, 0])
+    self.assertEqual(v2.get("a"), [3, 0])
+    self.assertEqual(v2.get("b"), [6, 6])
+
     x = data.data_variable(
         name="x",
         spec=ValueSpec(a=FieldSpec(), b=FieldSpec()),
@@ -88,6 +104,37 @@ class DataTest(absltest.TestCase):
     self.assertEqual(r.execute(num_steps=0)["x"].get("c"), 5)
     self.assertEqual(r.execute(num_steps=1)["x"].get("c"), 7)
     self.assertEqual(r.execute(num_steps=2)["x"].get("c"), 9)
+
+  def test_staic_sliced_value(self):
+    x = data.data_variable(
+        name="x",
+        spec=ValueSpec(a=FieldSpec(), b=FieldSpec()),
+        data_sequence=StaticSlicedValue(value=Value(a=[1], b=[4])))
+    r = PythonRuntime(network=Network(variables=[x]))
+    v0 = r.execute(num_steps=0)["x"]
+    v1 = r.execute(num_steps=1)["x"]
+    v2 = r.execute(num_steps=2)["x"]
+    self.assertEqual(v0.get("a"), 1)
+    self.assertEqual(v0.get("b"), 4)
+    self.assertEqual(v1.get("a"), 1)
+    self.assertEqual(v1.get("b"), 4)
+    self.assertEqual(v2.get("a"), 1)
+    self.assertEqual(v2.get("b"), 4)
+
+    # Test data_sequence with a batch dimension.
+    data.replace_data_sequence(
+        x,
+        data_sequence=StaticSlicedValue(
+            value=Value(a=[[1, 1]], b=[[4, 0]])))
+    v0 = r.execute(num_steps=0)["x"]
+    v1 = r.execute(num_steps=1)["x"]
+    v2 = r.execute(num_steps=2)["x"]
+    self.assertEqual(v0.get("a"), [1, 1])
+    self.assertEqual(v0.get("b"), [4, 0])
+    self.assertEqual(v1.get("a"), [1, 1])
+    self.assertEqual(v1.get("b"), [4, 0])
+    self.assertEqual(v2.get("a"), [1, 1])
+    self.assertEqual(v2.get("b"), [4, 0])
 
   def test_data_index_field(self):
     x = data.data_variable(

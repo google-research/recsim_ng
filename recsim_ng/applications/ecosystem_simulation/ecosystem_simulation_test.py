@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """Tests for recsim_ng.applications.ecosystem_simulation."""
 import os
 
@@ -53,7 +52,7 @@ class EcosystemSimulationTest(tf.test.TestCase, parameterized.TestCase):
     filepath = os.path.join(os.path.dirname(__file__), 'trajectory.pickle')
     traj = util.pickle_to_network_value_trajectory(filepath, network)
     self.assertAllClose(
-        -3365.896484375,
+        -3505.46435546875,
         log_probability.log_probability_from_value_trajectory(
             variables=variables,
             value_trajectory=traj,
@@ -68,7 +67,7 @@ class EcosystemSimulationTest(tf.test.TestCase, parameterized.TestCase):
         self._provider_means,
         2000,  # num_users
         2)  # horizon
-    self.assertAllClose(-14.24, mean, rtol=0.03)
+    self.assertAllClose(-14, mean, rtol=0.05)
 
 
 if __name__ == '__main__':

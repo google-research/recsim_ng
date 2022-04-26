@@ -22,3 +22,7 @@ User entity for recommendation simulation.
 
 [`class User`](../../../recsim_ng/entities/recommendation/user/User.md): An
 abstract user entity.
+
+## Type Aliases
+
+[`UserConstructor`](../../../recsim_ng/entities/recommendation/user/UserConstructor.md)

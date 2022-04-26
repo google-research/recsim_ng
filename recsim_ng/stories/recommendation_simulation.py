@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
-"""Recs simulation story."""
+"""Recs simulation stories."""
 from typing import Collection, Tuple, Union
 from recsim_ng.core import value
 from recsim_ng.core import variable
@@ -152,6 +151,46 @@ def simplified_recs_story(
   # 2. Recommender makes recommendation.
   slate_docs.value = variable.value(recommender.slate_docs)
   # 3. User responds to recommendation.
+  user_response.value = variable.value(user.next_response,
+                                       (user_state, slate_docs))
+
+  return [slate_docs, user_state, user_response]
+
+
+def recs_story_using_logged_slate_docs(
+    config, user_ctor,
+    slate_docs):
+  """A recommendation story to replay logged recommendations.
+
+  This story is the data-driven version of both simplified_recs_story and
+  recs_story. As the recommendation comes from data, there is no need to model
+  the corpus and others on which the user model does not directly depend.
+
+  Args:
+    config: A mapping holding the configuration parameters of simulation.
+    user_ctor: A User entity constructor.
+    slate_docs: A Variable created by data_variable() to replay logged recs.
+  Returns:
+    A collection of three Variables: slate_docs, user_state, and user_response.
+  """
+  # Construct entities.
+  user = user_ctor(config)
+  user_spec = user.specs()
+
+  # Variables.
+  user_response = Variable(name="user response", spec=user_spec.get("response"))
+  user_state = Variable(name="user state", spec=user_spec.get("state"))
+
+  # 0. Initial state.
+  user_state.initial_value = variable.value(user.initial_state)
+  user_response.initial_value = variable.value(user.next_response,
+                                               (user_state, slate_docs))
+
+  # 1. Update user state.
+  user_state.value = variable.value(
+      user.next_state,
+      (user_state.previous, user_response.previous, slate_docs.previous))
+  # 2. User responds to recommendation.
   user_response.value = variable.value(user.next_response,
                                        (user_state, slate_docs))
 

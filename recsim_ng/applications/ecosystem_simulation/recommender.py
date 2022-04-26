@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """A recommender recommends the closest documents based on some affinity."""
 from typing import Callable
 import edward2 as ed  # type: ignore
@@ -78,14 +77,13 @@ class MyopicRecommender(recommender.BaseRecommender):
             tf.gather(provider_pulls_diff, available_docs.get('provider_id')),
             0), -self._provider_boost_cap, self._provider_boost_cap)
     # Pick the k closest documents to the user interests if no provider_boost.
-    similarities = self._affinity_model.affinities(
+    similarities = self._affinity_model.affinities(  # pytype: disable=attribute-error  # trace-all-classes
         user_obs.get('user_interests'),
         available_docs.get('doc_features')).get('affinities') + 2.0
-    boosted_scores = similarities + provider_boost
     # Make sure high > low so we have log-probability.
-    scores = ed.Uniform(
-        low=tf.minimum(similarities, boosted_scores),
-        high=tf.maximum(similarities, boosted_scores) + 1e-5)
+    boosted_scores = similarities + provider_boost + 1e-4
+    scores = ed.Uniform(low=tf.minimum(similarities, boosted_scores),
+                        high=tf.maximum(similarities, boosted_scores))
     _, doc_indices = tf.math.top_k(scores, k=self._slate_size)
 
     def choose(field):

@@ -35,3 +35,7 @@ to `FieldValue`.
 
 [`class ValueSpec`](../../recsim_ng/core/value/Value.md): A mapping from field
 name to `FieldValue`.
+
+## Type Aliases
+
+[`Config`](../../recsim_ng/core/value/Config.md)

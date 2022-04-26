@@ -16,6 +16,9 @@ source</a>
 
 ## Modules
 
+[`bandits`](../recsim_ng/entities/bandits.md) module: Module importing entities
+for bandits.
+
 [`choice_models`](../recsim_ng/entities/choice_models.md) module: Module
 importing the choice model entities.
 

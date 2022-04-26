@@ -26,3 +26,11 @@ Entities base class and supporting functons.
 
 [`story_with_trainable_variables(...)`](../../../recsim_ng/lib/tensorflow/entity/story_with_trainable_variables.md):
 Returns the output of a story and trainable variables used in it.
+
+## Type Aliases
+
+[`EntityMap`](../../../recsim_ng/lib/tensorflow/entity/EntityMap.md)
+
+[`Story`](../../../recsim_ng/lib/tensorflow/entity/Story.md)
+
+[`TrainableVariables`](../../../recsim_ng/lib/tensorflow/entity/TrainableVariables.md)

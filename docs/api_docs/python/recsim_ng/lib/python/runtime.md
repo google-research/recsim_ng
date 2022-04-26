@@ -22,3 +22,7 @@ Python-based runtime.
 
 [`class PythonRuntime`](../../../recsim_ng/lib/python/runtime/PythonRuntime.md):
 A Python-based runtime for a `Network` of `Variable`s.
+
+## Type Aliases
+
+[`NetworkValue`](../../../recsim_ng/core/network/NetworkValue.md)

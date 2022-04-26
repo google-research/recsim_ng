@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """Tools to import data and convert them to Variables."""
 
 import abc
@@ -125,6 +124,13 @@ class SlicedValue(DataSequence):
         })
 
 
+class StaticSlicedValue(SlicedValue):
+  """Static version of SlicedValue with sequence length being one."""
+
+  def next_index(self, _):
+    return 0
+
+
 def data_variable(
     name,
     spec,
@@ -167,6 +173,18 @@ def data_variable(
     whose name is `data_index_field` and which is used to index into
     `data_sequence`.
   """
+  var = Variable(
+      name=name, spec=spec.union(ValueSpec(**{data_index_field: FieldSpec()})))
+  replace_data_sequence(var, data_sequence, output_fn, data_index_field)
+  return var
+
+
+def replace_data_sequence(
+    var,
+    data_sequence,
+    output_fn = lambda value: value,
+    data_index_field = DEFAULT_DATA_INDEX_FIELD):
+  """A helper function for data_variable() to use a new data_sequence."""
 
   def val(index):
     value = output_fn(data_sequence.get(index))
@@ -176,13 +194,10 @@ def data_variable(
               type(value).__name__))
     return value.union(Value(**{data_index_field: index}))
 
-  var = Variable(
-      name=name, spec=spec.union(ValueSpec(**{data_index_field: FieldSpec()})))
   var.initial_value = variable.value(lambda: val(data_sequence.first_index()))
   var.value = variable.value(
       lambda prev: val(data_sequence.next_index(prev.get(data_index_field))),
       (var.previous,))
-  return var
 
 
 def remove_data_index(value,

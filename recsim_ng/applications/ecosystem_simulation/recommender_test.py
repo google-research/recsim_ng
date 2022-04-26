@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Lint as: python3
 """Tests for recsim_ng.applications.ecosystem_simulation.recommender."""
 
 import edward2 as ed  # type: ignore
@@ -58,9 +57,9 @@ class MyopicRecommenderTest(tf.test.TestCase):
         doc_features=ed.Deterministic(
             loc=[[0., 0.], [1., 1.], [0., 1.], [1., 0.]]))
     expected = {
-        'doc_scores': [[1.0000043, 1.0000001, 2.0000086, 0.58579284],
-                       [1.000009, 1.0000083, 0.5857929, 2.0000098],
-                       [0.58579123, 2.0000002, 1.0000033, 1.0000091]],
+        'doc_scores': [[1.000043, 1.000014, 2.000085, 0.585849],
+                       [1.000089, 1.000084, 0.58585, 2.000098],
+                       [0.585833, 2.000027, 1.000034, 1.000091]],
         'provider_id': [[0, 0], [0, 0], [0, 0]],
         'doc_features': [[[0., 1.], [0., 0.]], [[1., 0.], [0., 0.]],
                          [[1., 1.], [1., 0.]]],

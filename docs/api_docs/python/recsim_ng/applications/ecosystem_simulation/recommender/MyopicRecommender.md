@@ -31,8 +31,8 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.ecosystem_simulation.recommender.MyopicRecommender(
-    config: Mapping[Text, Any],
-    affinity_model_ctor: Callable[..., object] = recsim_ng.entities.choice_models.affinities.TargetPointSimilarity
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
+    affinity_model_ctor: <a href="../../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md"><code>recsim_ng.applications.cav_synthetic_model.user.Constructor</code></a> = <a href="../../../../recsim_ng/entities/choice_models/affinities/TargetPointSimilarity.md"><code>recsim_ng.entities.choice_models.affinities.TargetPointSimilarity</code></a>
 ) -> None
 </code></pre>
 

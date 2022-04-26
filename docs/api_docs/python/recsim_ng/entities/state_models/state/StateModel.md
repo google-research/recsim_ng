@@ -27,8 +27,7 @@ Inherits From: [`Entity`](../../../../recsim_ng/lib/tensorflow/entity/Entity.md)
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.entities.state_models.state.StateModel(
-    batch_ndims: int = 0,
-    name: Text = &#x27;StateModel&#x27;
+    batch_ndims: int = 0, name: Text = &#x27;StateModel&#x27;
 ) -> None
 </code></pre>
 

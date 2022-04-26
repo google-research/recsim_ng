@@ -32,8 +32,8 @@ source</a>
 <code>@abc.abstractmethod</code>
 <code>execute(
     num_steps: int,
-    starting_value: Optional[NetworkValue] = None
-) -> <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>
+    starting_value: Optional[<a href="../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>] = None
+) -> <a href="../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>
 </code></pre>
 
 The `NetworkValue` at `num_steps` steps after `starting_value`.

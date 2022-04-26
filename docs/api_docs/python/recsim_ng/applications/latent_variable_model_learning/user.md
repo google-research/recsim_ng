@@ -22,3 +22,7 @@ User entity for the simulation of learning latent variable models.
 
 [`class ModelLearningDemoUser`](../../../recsim_ng/applications/latent_variable_model_learning/user/ModelLearningDemoUser.md):
 User model with embedding target intent and satisfaction.
+
+## Type Aliases
+
+[`Constructor`](../../../recsim_ng/applications/cav_synthetic_model/user/Constructor.md)

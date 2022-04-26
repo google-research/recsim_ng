@@ -20,9 +20,9 @@ A simple recommendation story.
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.stories.recommendation_simulation.simplified_recs_story(
-    config: Config,
-    user_ctor: Callable[[Config], User],
-    recommender_ctor: Callable[[Config], Recommender]
+    config: <a href="../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
+    user_ctor: <a href="../../../recsim_ng/entities/recommendation/user/UserConstructor.md"><code>recsim_ng.entities.recommendation.user.UserConstructor</code></a>,
+    recommender_ctor: <a href="../../../recsim_ng/entities/recommendation/recommender/RecommenderConstructor.md"><code>recsim_ng.entities.recommendation.recommender.RecommenderConstructor</code></a>
 ) -> Collection[<a href="../../../recsim_ng/core/variable/Variable.md"><code>recsim_ng.core.variable.Variable</code></a>]
 </code></pre>
 

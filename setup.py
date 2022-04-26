@@ -31,6 +31,7 @@ install_requires = [
     'edward2',
     'gin-config',
     'gym',
+    'jax',
     'matplotlib',
     'numpy',
     'tensorflow >= 2.3.0',
@@ -46,7 +47,7 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='recsim_ng',
-    version='0.1.1',
+    version='0.1.2',
     author='The RecSim Team',
     author_email='no-reply@google.com',
     description=recsim_ng_description,

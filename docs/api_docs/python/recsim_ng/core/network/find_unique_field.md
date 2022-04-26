@@ -20,7 +20,7 @@ Like `find_field`, but requires that `field_name` be unique.
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.core.network.find_unique_field(
-    network_value: <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>,
+    network_value: <a href="../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>,
     field_name: Text
 ) -> Tuple[Text, FieldValue]
 </code></pre>

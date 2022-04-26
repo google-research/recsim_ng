@@ -110,7 +110,7 @@ source</a>
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>at(
     *field_names
-) -> "Value"
+) -> 'Value'
 </code></pre>
 
 The `Value` with a subset of fields.
@@ -136,7 +136,7 @@ source</a>
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>map(
     fn: Callable[[FieldValue], FieldValue]
-) -> "Value"
+) -> 'Value'
 </code></pre>
 
 The `Value` resulting from mapping `fn` over all fields in this value.
@@ -149,7 +149,7 @@ source</a>
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>prefixed_with(
     field_name_prefix: Text
-) -> "Value"
+) -> 'Value'
 </code></pre>
 
 The `Value` with this value nested underneath `field_name_prefix`.
@@ -161,8 +161,8 @@ source</a>
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>union(
-    value: "Value"
-) -> "Value"
+    value: 'Value'
+) -> 'Value'
 </code></pre>
 
 The disjoint union of this `Value` and another `Value`.

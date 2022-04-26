@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """User entity for welfare simulation."""
 from typing import Callable
 import edward2 as ed  # type: ignore
@@ -119,7 +118,7 @@ class ClusteredNormalUser(user.User):
     chosen_doc_features = selectors.get_chosen(slate_docs, chosen_docs)
     doc_features = chosen_doc_features.get('doc_features')
     # Define similarities to be affinities(user_interest, doc_features) + 2.
-    similarities = self._utility_model.affinities(user_interests, doc_features,
+    similarities = self._utility_model.affinities(user_interests, doc_features,  # pytype: disable=attribute-error  # trace-all-classes
                                                   False).get('affinities') + 2.0
     return Value(
         utilities=ed.Normal(
@@ -136,13 +135,13 @@ class ClusteredNormalUser(user.User):
 
   def next_response(self, previous_state, slate_docs):
     """The response value after the initial value."""
-    similarities = self._affinity_model.affinities(
+    similarities = self._affinity_model.affinities(  # pytype: disable=attribute-error  # trace-all-classes
         previous_state.get('user_interests'),
         slate_docs.get('doc_features')).get('affinities') + 2.0
-    return self._choice_model.choice(similarities)
+    return self._choice_model.choice(similarities)  # pytype: disable=attribute-error  # trace-all-classes
 
   def specs(self):
-    response_spec = self._choice_model.specs()
+    response_spec = self._choice_model.specs()  # pytype: disable=attribute-error  # trace-all-classes
     observation_spec = ValueSpec(
         user_interests=self._interest_model.specs().get('state'))
     state_spec = ValueSpec(

@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """User entity for the simulation of learning latent variable models."""
 from typing import Callable, Optional, Text
 
@@ -113,7 +112,7 @@ class ModelLearningDemoUser(user.User):
     """The state value after the initial value."""
     # Compute the improvement of slate scores.
     slate_doc_features = slate_docs.get('features')
-    slate_doc_affinities = self._affinity_model.affinities(
+    slate_doc_affinities = self._affinity_model.affinities(  # pytype: disable=attribute-error  # trace-all-classes
         previous_state.get('intent'), slate_doc_features).get('affinities')
     max_slate_utility = tf.reduce_max(slate_doc_affinities, axis=-1) + 2.0
     improvement = max_slate_utility - previous_state.get('max_slate_utility')
@@ -128,18 +127,18 @@ class ModelLearningDemoUser(user.User):
   def next_response(self, previous_state, slate_docs):
     """The response value after the initial value."""
     slate_doc_features = slate_docs.get('features')
-    slate_doc_scores = self._affinity_model.affinities(
+    slate_doc_scores = self._affinity_model.affinities(  # pytype: disable=attribute-error  # trace-all-classes
         previous_state.get('intent'), slate_doc_features).get('affinities')
     adjusted_scores = (
         slate_doc_scores + 2.0 +
         tf.expand_dims(previous_state.get('satisfaction'), axis=-1))
-    return self._choice_model.choice(adjusted_scores)
+    return self._choice_model.choice(adjusted_scores)  # pytype: disable=attribute-error  # trace-all-classes
 
   def observation(self):
     pass
 
   def specs(self):
-    response_spec = self._choice_model.specs()
+    response_spec = self._choice_model.specs()  # pytype: disable=attribute-error  # trace-all-classes
     state_spec = ValueSpec(
         intent=self._intent_model.specs().get('state'),
         satisfaction=Space(

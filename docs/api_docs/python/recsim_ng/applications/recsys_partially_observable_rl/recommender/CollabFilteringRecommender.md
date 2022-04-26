@@ -30,8 +30,8 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.recsys_partially_observable_rl.recommender.CollabFilteringRecommender(
-    config: Dict[Text, Any],
-    model_ctor: tf.keras.Model = recsim_ng.applications.recsys_partially_observable_rl.recommender.CollabFilteringModel,
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
+    model_ctor: tf.keras.Model = <a href="../../../../recsim_ng/applications/recsys_partially_observable_rl/recommender/CollabFilteringModel.md"><code>recsim_ng.applications.recsys_partially_observable_rl.recommender.CollabFilteringModel</code></a>,
     name=&#x27;Recommender&#x27;
 ) -> None
 </code></pre>

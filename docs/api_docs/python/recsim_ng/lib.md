@@ -19,6 +19,9 @@ source</a>
 [`data`](../recsim_ng/lib/data.md) module: Tools to import data and convert them
 to Variables.
 
+[`jax`](../recsim_ng/lib/jax.md) module: Module importing
+recsim_ng.lib.tensorflow.*.
+
 [`python`](../recsim_ng/lib/python.md) module: Module importing
 recsim_ng.lib.python.*.
 

@@ -42,7 +42,7 @@ This entity ingests a tf.keras.layers.Layer instance that supports the Cell API,
 (e.g. SimpleRNNCell, GRUCell) and computes a state transition as x_next =
 RNN(inputs, x). This entity currently only supports a single batch dimension
 specified at construction time and static parameters. The state also contains
-the rnn output field returned by the cell's __call__ method. ``` num_outputs = 5
+the rnn output field returned by the cell's **call** method. ``` num_outputs = 5
 batch_size = 3 input_size = 2 rnn_cell = tf.keras.layers.GRUCell(num_outputs)
 state_model = dynamic.RNNCellStateModel(rnn_cell, batch_size, input_size)
 i_state = state_model.initial_state() => Value[{'state':

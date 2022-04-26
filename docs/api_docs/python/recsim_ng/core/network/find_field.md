@@ -20,7 +20,7 @@ Looks up the value(s) of a given field name across a network.
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.core.network.find_field(
-    network_value: <a href="../../../recsim_ng/core/value/Value.md"><code>recsim_ng.core.value.Value</code></a>,
+    network_value: <a href="../../../recsim_ng/core/network/NetworkValue.md"><code>recsim_ng.core.network.NetworkValue</code></a>,
     field_name: Text
 ) -> Mapping[Text, FieldValue]
 </code></pre>

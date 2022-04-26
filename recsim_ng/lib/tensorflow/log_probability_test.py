@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2021 The RecSim Authors.
+# Copyright 2022 The RecSim Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# python3
 """Tests for log_probability."""
 
 import edward2 as ed  # type: ignore
@@ -57,6 +56,44 @@ class LogProbabilityTest(tf.test.TestCase):
 
     z.value = variable.value(v, (z.previous,))
     return z, o, obs_0, obs_1
+
+  def latent_chained_rv_test_network(self):
+    #   Creates variables to simulate the sequence
+    #   z[0] = Normal(loc=1., scale=1)
+    #   x[0] = (0., z)
+    #   z[t] = z[t-1] + x[t-1][0]
+    #   x[t][0] = Normal(loc=x[t-1][0], scale=1)
+    #   x[t][1] = Normal(loc=x[t][0] + z, scale=2)
+    obs_0 = tf.constant([0., 1., 2., 3.])
+    obs_1 = tf.constant([1., 2., 3., 4.])
+    o = data.data_variable(
+        name="o",
+        spec=ValueSpec(a0=FieldSpec(), a1=FieldSpec()),
+        data_sequence=data.SlicedValue(value=Value(a0=obs_0, a1=obs_1)))
+    z = Variable(name="z", spec=ValueSpec(a=FieldSpec()))
+    x = Variable(name="x", spec=ValueSpec(a0=FieldSpec(), a1=FieldSpec()))
+    z.initial_value = variable.value(
+        lambda: Value(a=ed.Normal(loc=1., scale=1.)))
+    z.value = variable.value(
+        lambda prev, x_prev: Value(a=prev.get("a") + x_prev.get("a0")),
+        (z.previous, x.previous))
+    z_obs = Variable(name="z obs", spec=ValueSpec(a=FieldSpec()))
+    z_obs.initial_value = variable.value(
+        lambda: Value(a=ed.Normal(loc=1., scale=1.)))
+    z_obs.value = variable.value(
+        lambda prev, x_prev: Value(a=prev.get("a") + x_prev.get("a0")),
+        (z_obs.previous, o.previous))
+
+    x.initial_value = variable.value(
+        lambda z_curr: Value(a0=0., a1=z_curr.get("a")), (z,))
+
+    def v(prev, z_curr):
+      a0 = ed.Normal(loc=prev.get("a0"), scale=1.)
+      a1 = ed.Normal(loc=a0 + z_curr.get("a"), scale=2.)
+      return Value(a0=a0, a1=a1)
+
+    x.value = variable.value(v, (x.previous, z))
+    return x, z, o, z_obs, obs_0, obs_1
 
   def test_smoke(self):
     o = data.data_variable(
@@ -161,6 +198,16 @@ class LogProbabilityTest(tf.test.TestCase):
               variables=[z], value_trajectory=z_network_value, num_steps=i),
           log_probability.log_probability(
               variables=[z], observation=[o], num_steps=i))
+
+  def test_log_prob_from_value_traj_with_latent_vars(self):
+    x, z, o, z_obs, obs_0, obs_1 = self.latent_chained_rv_test_network()
+    x_network_value = {"x": value.Value(a0=obs_0, a1=obs_1)}
+    for i in range(4):
+      self.assertAllClose(
+          log_probability.log_probability_from_value_trajectory(
+              variables=[x, z], value_trajectory=x_network_value, num_steps=i),
+          log_probability.log_probability(
+              variables=[x, z], observation=[o, z_obs], num_steps=i))
 
   def test_disaggregated_log_prob(self):
 

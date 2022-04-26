@@ -16,6 +16,9 @@ source</a>
 
 ## Modules
 
+[`cav_synthetic_model`](../recsim_ng/applications/cav_synthetic_model.md)
+module: Module importing the CAV synthetic model.
+
 [`ecosystem_simulation`](../recsim_ng/applications/ecosystem_simulation.md)
 module: Module importing the application modeling ecosytem.
 

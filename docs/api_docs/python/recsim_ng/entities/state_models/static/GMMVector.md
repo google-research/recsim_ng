@@ -35,7 +35,7 @@ Inherits From:
     mixture_logits: Optional[tf.Tensor] = None,
     component_means: Optional[tf.Tensor] = None,
     component_scales: Optional[tf.Tensor] = None,
-    linear_operator_ctor: Callable[[tf.Tensor], tf.linalg.LinearOperator] = tf.linalg.LinearOperatorFullMatrix,
+    linear_operator_ctor: <a href="../../../../recsim_ng/entities/state_models/dynamic/LinearOpCtor.md"><code>recsim_ng.entities.state_models.dynamic.LinearOpCtor</code></a> = tf.linalg.LinearOperatorFullMatrix,
     return_component_id: bool = False,
     name: Text = &#x27;GMMVectorStateModel&#x27;
 ) -> None

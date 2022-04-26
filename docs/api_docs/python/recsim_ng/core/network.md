@@ -30,3 +30,7 @@ value(s) of a given field name across a network.
 
 [`find_unique_field(...)`](../../recsim_ng/core/network/find_unique_field.md):
 Like `find_field`, but requires that `field_name` be unique.
+
+## Type Aliases
+
+[`NetworkValue`](../../recsim_ng/core/network/NetworkValue.md)

@@ -31,7 +31,7 @@ Inherits From:
 
 <pre class="devsite-click-to-copy prettyprint lang-py tfo-signature-link">
 <code>recsim_ng.applications.ecosystem_simulation.corpus.ViableCorpus(
-    config: Mapping[Text, Any],
+    config: <a href="../../../../recsim_ng/core/value/Config.md"><code>recsim_ng.core.value.Config</code></a>,
     gamma: float = 2.0,
     discount: float = 0.96,
     provider_stddev: float = 1.0
